@@ -19,6 +19,6 @@ from django.contrib.auth import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'',include('awwardsApp.urls')),
+    url(r'',include('theSmartChurch.urls')),
      url(r'^logout/$', views.LogoutView.as_view(template_name='index.html'), {"next_page": '/'}),
 ]
