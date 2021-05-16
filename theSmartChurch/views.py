@@ -28,6 +28,7 @@ def register(request):
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password1')
             email = form.cleaned_data.get('email')
+            
             user = User.objects.get(username=username)
             profile=Profile.objects.create(user=user,email=email)
             user = authenticate(username=username, password=password)
