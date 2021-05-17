@@ -1,0 +1,56 @@
+{%extends 'base.html'%}
+{% load static%}
+{% block content %}
+{{block.super}}
+<style>
+
+  </style>
+
+
+<section class="section_book">
+  <div class="container-fluid best ">
+      <h2 class="text-white  display-3 my-2">Welcome to Smart Church!</h2>
+      <h4 class=" text-white  my-4">The Best Thing To Hold Onto In Life Is Each Other</h4>
+  </div>
+  <section>
+</section>
+  <div class="bookingform">
+      <form action="/examples/actions/confirmation.php" method="post">
+          <h2>Book Date</h2>
+          <p>Please Fill The Form To Book The Form</p>
+          <hr>
+          <div class="form-group">
+              <div class="row">
+                  <div class="col"><input type="text" class="form-control" name="groom" placeholder="Groom Names" required="required"></div>
+                  <div class="col"><input type="text" class="form-control" name="bride" placeholder="Bride Names" required="required"></div>
+              </div>        	
+          </div>
+          <div class="form-group">
+              <input type="email" class="form-control" name="email" placeholder="Email" required="required">
+          </div>
+          <div class="form-group">
+              <input type="text" class="form-control" name="phone" placeholder="Phone Number" required="required">
+          </div>
+          <div class="form-group">
+              <input type="date" class="form-control" name="confirm_password" placeholder="wedding Date" required="required">
+          </div>        
+          <div class="form-group text-center">
+              <button type="submit" class="btn btn-primary btn-lg">Book</button>
+          </div>
+      </form>
+      
+  </div>
+   
+</section>
+
+
+<section class="container">
+<div class="row">
+    <div class="col bg-warning">1</div>
+    <div class="col bg-danger">2</div>
+    <div class="col bg-warning">3</div>
+    <div class="col bg-danger">4</div>
+</div>
+</section>
+
+{%endblock%}
