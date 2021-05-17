@@ -15,7 +15,7 @@ urlpatterns = [
     url(r'^search/', views.search_results, name='search_results'),
     url(r'^ratings/', include('star_ratings.urls', namespace='ratings')),
     url(r'^accounts/', include('registration.backends.simple.urls')),
-   
+    url(r'bookwedding',views.bookwedding,name='bookwedding'), 
 
 
 ]
