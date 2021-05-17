@@ -20,6 +20,9 @@ def index(request):
     return render(request, 'index.html',{'projects':projects})
 
 
+def bookwedding(request):
+    projects = Project.objects.all().order_by('-date_posted')
+    return render(request, 'book_wedding.html',{'projects':projects})
 
 
 def register(request):
