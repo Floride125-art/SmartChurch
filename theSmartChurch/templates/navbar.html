@@ -167,10 +167,10 @@ section{
                             <a class="btn btn" data-toggle="dropdown" 
                                 aria-haspopup="true" aria-expanded="false" style="color: white;"  id="forNav">{{ user.username }} <img src='{{user.profile.profile_picture.url}}' width='18px' height='18px' style='border-radius:50%;'>
                             </a>
-                            <div class="dropdown-menu" style="width:300px;">
-                                <a class="dropdown-item" href="{%url 'my_profile'%}">Profile</a>
+                            <div class="dropdown-menu" style="width:300px; background-color: #e67e22;">
+                                <a class="dropdown-item" href="{%url 'my_profile'%}" id="forNav" style="color:white;">Profile</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/logout">Logout</a>
+                                <a class="dropdown-item" href="/logout" id="forNav" style="color:white;">Logout</a>
                             </div>
                         </div>
                     </div>
