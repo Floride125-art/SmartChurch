@@ -3,88 +3,88 @@
 {% block content %}
 {{block.super}}
 <style>
-.section_book{
-    background-color: rgb(255, 255, 255);
-  }
-  .section_book .best{
-      box-sizing: border-box;
-      background-size: cover;
-      background-position: bottom;
-      background-image:url("../../media/images/bgwdg.jpg");
-      padding-top: 100px;
-      text-align: center;
-      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      padding-bottom: 50px;
-  }
-  .form-control {
-      height: 41px;
-      background: #f2f2f2;
-      box-shadow: none !important;
-      border: none;
-   
-  }
-  .form-control:focus {
-      background: #e2e2e2;
-  }
-  .form-control, .btn {        
-      border-radius: 3px;
-  }
-  .bookingform {
-
-      width: 400px;
-      margin: 30px auto;
-      background-image:url("../../media/images/bgform.jpg");
-      background-size: 100%;
-      }
-  .bookingform form {
-      color: rgb(226, 226, 226);
-      border-radius: 3px;
-      margin-bottom: 15px;
-      background:transparent;
-      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-      padding: 30px;
-  }
-  .bookingform h2  {
-      color: rgb(255, 255, 255);
-      text-shadow:1px 1px 1px #000;
-      font-weight: bold;
-      margin-top: 0;
-  }
-  .bookingform p  {
-      color: rgb(255, 255, 255);
-      text-shadow:1px 1px 1px #000;
-      font-weight: bold;
-      margin-top: 0;
-  }
-  .bookingform hr  {
-      margin: 0 -30px 20px;
-  }    
-  .bookingform .form-group {
-      margin-bottom: 20px;
-  }
- 
-  .bookingform .row div:first-child {
-      padding-right: 10px;
-  }
-  .bookingform .row div:last-child {
-      padding-left: 10px;
-  }
-  .bookingform .btn {        
-      font-size: 16px;
-      font-weight: bold;
-      background: #3598dc;
-      border: none;
-      min-width: 140px;
-  }
-  .bookingform .btn:hover, .bookingform .btn:focus {
-      background: #2389cd !important;
-      outline: none;
-  }
-   
+  
+    .section_book{
+        background-color: rgb(255, 255, 255);
+    }
+    .section_book .best{
+        box-sizing: border-box;
+        background-size: cover;
+        background-position: bottom;
+        background-image:url("../../media/images/bgwdg.jpg");
+        padding-top: 100px;
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        padding-bottom: 50px;
+    }
+    .form-control {
+        height: 41px;
+        background: #f2f2f2;
+        box-shadow: none !important;
+        border: none;
+    
+    }
+    .form-control:focus {
+        background: #e2e2e2;
+    }
+    .form-control, .btn {        
+        border-radius: 3px;
+    }
+    .bookingform {
+        width: 400px;
+        margin: 30px auto;
+        background-image:url("../../media/images/bgform.jpg");
+        background-size: 100%;
+        }
+    .bookingform form {
+        color: rgb(226, 226, 226);
+        border-radius: 3px;
+        margin-bottom: 15px;
+        background:transparent;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        padding: 30px;
+    }
+    .bookingform h2  {
+        color: rgb(255, 255, 255);
+        text-shadow:1px 1px 1px #000;
+        font-weight: bold;
+        margin-top: 0;
+    }
+    .bookingform p  {
+        color: rgb(255, 255, 255);
+        text-shadow:1px 1px 1px #000;
+        font-weight: bold;
+        margin-top: 0;
+    }
+    .bookingform hr  {
+        margin: 0 -30px 20px;
+    }    
+    .bookingform .form-group {
+        margin-bottom: 20px;
+    }
+    
+    .bookingform .row div:first-child {
+        padding-right: 10px;
+    }
+    .bookingform .row div:last-child {
+        padding-left: 10px;
+    }
+    .bookingform .btn {        
+        font-size: 16px;
+        font-weight: bold;
+        background: #3598dc;
+        border: none;
+        min-width: 140px;
+    }
+    .bookingform .btn:hover, .bookingform .btn:focus {
+        background: #2389cd !important;
+        outline: none;
+    }
+    
   </style>
 
 
-<section class="section_book">
+<section class="section_book bg-light">
   <div class="container-fluid best ">
       <h2 class="text-white  display-3 my-2">Welcome to Smart Church!</h2>
       <h4 class=" text-white  my-4">The Best Thing To Hold Onto In Life Is Each Other</h4>
@@ -94,7 +94,7 @@
   <div class="bookingform">
       <form action="/examples/actions/confirmation.php" method="post">
           <h2>Book Date</h2>
-          <p>Please Fill The Form To Book The Form</p>
+          <p>Please Fill The Form To Book a Date</p>
           <hr>
           <div class="form-group">
               <div class="row">
@@ -121,13 +121,5 @@
 </section>
 
 
-<section class="container">
-<div class="row">
-    <div class="col bg-warning">1</div>
-    <div class="col bg-danger">2</div>
-    <div class="col bg-warning">3</div>
-    <div class="col bg-danger">4</div>
-</div>
-</section>
 
 {%endblock%}
