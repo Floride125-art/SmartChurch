@@ -129,7 +129,7 @@ section{
         <label class="logo">Calvary</label>
         <ul>
           <li><a class="active"  href="{% url 'index' %}" id="forNav">Home</a></li>
-          <li><a href="#" id="forNav">About</a></li>
+          <li><a href="{% url 'about' %}" id="forNav">About</a></li>
           <li><a href="#" id="forNav">Watch</a></li>
           <li><a href="#" id="forNav">Give</a></li>
           <li>
@@ -145,7 +145,7 @@ section{
                             <div class="dropdown-menu" style="width:200px; background-color: #e67e22;">
                                 <a class="dropdown-item" href="#" id="forNav"  style="color: white;">Baptism</a>
                                 <div class="dropdown-divider" id="forNav"></div>
-                                <a class="dropdown-item" href="#" id="forNav"  style="color: white;">Weddings</a>
+                                <a class="dropdown-item" href="{% url 'bookwedding' %}" id="forNav"  style="color: white;">Weddings</a>
                             </div>
                         <!-- </div>
                     </div> -->
