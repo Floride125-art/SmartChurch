@@ -20,6 +20,9 @@ def index(request):
     projects = Project.objects.all().order_by('-date_posted')
     return render(request, 'index.html',{'projects':projects})
 
+
+
+
 def register(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
