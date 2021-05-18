@@ -24,6 +24,11 @@ def bookwedding(request):
     projects = Project.objects.all().order_by('-date_posted')
     return render(request, 'book_wedding.html',{'projects':projects})
 
+def about(request):
+    projects = Project.objects.all().order_by('-date_posted')
+    return render(request, 'about.html',{'projects':projects})
+
+
 
 def register(request):
     if request.method == 'POST':
