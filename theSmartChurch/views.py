@@ -28,6 +28,9 @@ def bookwedding(request):
 def about(request):
     projects = Project.objects.all().order_by('-date_posted')
     return render(request, 'about.html',{'projects':projects})
+def give(request):
+    projects = Project.objects.all().order_by('-date_posted')
+    return render(request, 'give.html',{'projects':projects})
 
 
 
