@@ -11,3 +11,4 @@ admin.site.register(Item, MyModelAdmin)
 # Register your models here.
 admin.site.register(Profile)
 admin.site.register(Project)
+# admin.site.register(Announcements)

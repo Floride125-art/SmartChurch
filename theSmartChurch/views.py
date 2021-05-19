@@ -2,20 +2,17 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
-from .models import Profile,Project, Item
-from .forms import NewProjectForm,ProfileUpdateForm,RegisterForm
+from .models import Profile,Project
+from .forms import NewProjectForm,ProfileUpdateForm,RegisterForm, AnnouncementForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .serializer import ProfileSerializer,ProjectSerializer
+from .serializer import ProfileSerializer,ProjectSerializer, AnnouncementsSerializer
 from django.shortcuts import render
 import six
-
-# Create your views here.
-
 def index(request):
     projects = Project.objects.all().order_by('-date_posted')
     return render(request, 'index.html',{'projects':projects})
@@ -113,6 +110,21 @@ def new_project(request):
     else:
         form = NewProjectForm()
     return render(request, 'newProject.html', {"form":form, "current_user":current_user})
+
+@login_required(login_url='/accounts/login/')     
+def announcement(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form =AnnouncementForm(request.POST, request.FILES)
+        if form.is_valid():
+            announcement = form.save(commit=False)
+            announcement.user = current_user
+            announcement.save()
+        return redirect('index')
+        
+    else:
+        form = AnnouncementForm()
+    return render(request, 'announcement.html', {"form":form, "current_user":current_user})
 
 def search_results(request):
 
