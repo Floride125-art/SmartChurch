@@ -21,6 +21,20 @@ def index(request):
     projects = Project.objects.all().order_by('-date_posted')
     return render(request, 'index.html',{'projects':projects})
 
+
+def bookwedding(request):
+    projects = Project.objects.all().order_by('-date_posted')
+    return render(request, 'book_wedding.html',{'projects':projects})
+
+def about(request):
+    projects = Project.objects.all().order_by('-date_posted')
+    return render(request, 'about.html',{'projects':projects})
+def give(request):
+    projects = Project.objects.all().order_by('-date_posted')
+    return render(request, 'give.html',{'projects':projects})
+
+
+
 def register(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)

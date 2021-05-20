@@ -1,0 +1,242 @@
+{%extends 'base.html'%}
+{% load static%}
+{% block content %}
+{{block.super}}
+<style>
+    .view {
+        min-height: 60%;
+        max-height: 70%;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://justbetweenus.org/downloads/3933/download/answering-gods-call.jpg?cb=43d7f2ea0ab8f8a90b43ad208082a4d2&w=1200');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        width: 100%;
+
+        overflow: hidden;
+    }
+
+    #donText {
+        margin-top: 15%;
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+    .footer{
+	background-color: #000000;
+    padding: 20px 0;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e67e22;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+.bottom{
+  align-items: bottom;
+  margin-top: 20px;
+  margin-bottom: -10px;
+
+}
+.bottom center a{
+  color: #e67e22;
+  text-decoration: none;
+}
+.bottom center a:hover{
+  text-decoration: underline;
+}
+.bottom center span{
+  color: #656565;
+}
+
+
+
+
+</style>
+
+<div class="view container-fluid">
+    <div class="header" style="height: 100vh;">
+        <div class="container" style="color:white;">
+            <div class="row" style="padding-top:50px;">
+                
+                <div class="col-md-4"></div>
+
+            </div>
+            <div class="container text-center" id="donText">
+                <h1 class="hero-title">Donation</h1>
+                <p class="pt-1 hero-description">2 Corinthians 9:6-8 NIV
+                    Remember this: Whoever sows sparingly will also reap sparingly, and whoever sows
+                    generously will also reap generously. Each of you should give what you have decided in
+                    your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver.
+                    And God is able to bless you abundantly, so that in all things at
+                    all times, having all that you need, you will abound in every good work.</p>
+                <p class="text-center my-4">We believe in the power of generosity, what it does for the
+                    individual doing the giving, and for the purpose that the giving supports.</p>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+<div class="jumbotron">
+    <div class="container" id="content">
+        <div class="row">
+            <div class="col-md-4">
+                <di class="mail">
+                <i class="fas fa-envelope" style="font-size: 420%; margin-bottom: 10px;"></i>
+            </di>
+                <h2 class="text-terracota text-uppercase" style="color: #e67e22;">Mail </h2>
+                <p></p>
+                <p><a class="cta-link" href="https://calvary.com/contact/">Get Directions <i
+                            class="fa fa-arrow-right" style="color: #e67e22;"></i></a></p>
+
+            </div>
+            <div class="col-md-4">
+                <i class="fas fa-sms" style="font-size: 420%; margin-bottom: 10px;"></i>
+                <h2 class="text-terracota text-uppercase" style="color: #e67e22;">Text</h2>
+                <p></p>
+                <p><a class="cta-link" href="sms://+2507888888">Text Now <i class="fa fa-arrow-right" style="color: #e67e22;"></i></a></p>
+
+            </div>
+            <div class="col-md-4">
+                <i class="far fa-credit-card" style="font-size: 420%; margin-bottom: 10px;"></i>
+                <h2 class="text-terracota text-uppercase" style="color: #e67e22;">Online</h2>
+                <p>Set up a one-time or recurring contribution, or pay for an upcoming event using your
+                    debit or credit card, or bank account.</p>
+                <p><a class="cta-link"
+                        href="https://www.eservicepayments.com/cgi-bin/Vanco_ver3.vps?appver3=Fi1giPL8kwX_Oe1AO50jRvmIxHZViiBkWo5taVIaOB-hjXsUKRLlmI4vCU4-rZZZ2EvVVAEjqawDomKT1pbouWLzZi3UA0cP0N0fDaJXRYE=&#038;ver=3">Give
+                        Online <i class="fa fa-arrow-right" style="color: #e67e22;"></i></a></p>
+
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>church</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Sermons</a></li>
+           
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Connected</h4>
+          <ul>
+            <li><a href="#">Watsapp group</a></li>
+            <li><a href="#">Prayers group</a></li>
+            <li><a href="#">Choir Group</a></li>
+            <li><a href="#">Worship group</a></li>
+            
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Calvary Ministries</h4>
+          <ul>
+            <li><a href="#">watch</a></li>
+            <li><a href="#">Give</a></li>
+            <li><a href="#">Baptism</a></li>
+            <li><a href="#">Weddings</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>follow us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <h4 style="margin-top: 10px;">Contact Us</h4>
+            <div class="content">
+              <form action="#">
+                <div class="email">
+                  <div class="text" style="color: white;">Email *</div>
+                  <input type="email" required>
+                </div>
+                <div class="msg">
+                  <div class="text" style="color: white;">Message *</div>
+                  <textarea rows="2" cols="25" required></textarea>
+                </div>
+                <div class="btn" >
+                  <button type="submit" style="background-color:#e67e22 ; color: white;">Send</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <center>
+        <span class="credit">Created By <a href="https://www.codingnepalweb.com">Calvary Ministries</a> | </span>
+        <span class="far fa-copyright"></span><span> 2020 All rights reserved.</span>
+      </center>
+    </div>
+  </footer>
+  
+
+{%endblock%}

@@ -1,0 +1,284 @@
+{%extends 'base.html'%}
+{% load static%}
+{% block content %}
+{{block.super}}
+<style>
+    *{
+        max-width: 100%;
+    }
+  
+    .section_book{
+        background-color: rgb(255, 255, 255);
+    }
+    .section_book .best{
+        box-sizing: border-box;
+        background-size: cover;
+        background-position: bottom;
+        background-image:url("../../media/images/bgwdg.jpg");
+        padding-top: 100px;
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        padding-bottom: 50px;
+    }
+    .form-control {
+        height: 41px;
+        background: #f2f2f2;
+        box-shadow: none !important;
+        border: none;
+    
+    }
+    .form-control:focus {
+        background: #e2e2e2;
+    }
+    .form-control, .btn {        
+        border-radius: 3px;
+    }
+    .bookingform {
+        width: 400px;
+        margin: 30px auto;
+        background-image:url("../../media/images/bgform.jpg");
+        background-size: 100%;
+        }
+    .bookingform form {
+        color: rgb(226, 226, 226);
+        border-radius: 3px;
+        margin-bottom: 15px;
+        background:transparent;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        padding: 30px;
+    }
+    .bookingform h2  {
+        color: rgb(255, 255, 255);
+        text-shadow:1px 1px 1px #000;
+        font-weight: bold;
+        margin-top: 0;
+    }
+    .bookingform p  {
+        color: rgb(255, 255, 255);
+        text-shadow:1px 1px 1px #000;
+        font-weight: bold;
+        margin-top: 0;
+    }
+    .bookingform hr  {
+        margin: 0 -30px 20px;
+    }    
+    .bookingform .form-group {
+        margin-bottom: 20px;
+    }
+    
+    .bookingform .row div:first-child {
+        padding-right: 10px;
+    }
+    .bookingform .row div:last-child {
+        padding-left: 10px;
+    }
+    .bookingform .btn {        
+        font-size: 16px;
+        font-weight: bold;
+        background: #3598dc;
+        border: none;
+        min-width: 140px;
+    }
+    .bookingform .btn:hover, .bookingform .btn:focus {
+        background: #2389cd !important;
+        outline: none;
+    }
+    
+    .footer{
+	background-color: #000000;
+    padding: 20px 0;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e67e22;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+.bottom{
+  align-items: bottom;
+  margin-top: 20px;
+  margin-bottom: -10px;
+
+}
+.bottom center a{
+  color: #e67e22;
+  text-decoration: none;
+}
+.bottom center a:hover{
+  text-decoration: underline;
+}
+.bottom center span{
+  color: #656565;
+}
+
+
+
+  </style>
+
+
+<section class="section_book bg-light">
+  <div class="container-fluid best ">
+      <h2 class="text-white  display-3 my-2">Welcome to Smart Church!</h2>
+      <h4 class=" text-white  my-4">The Best Thing To Hold Onto In Life Is Each Other</h4>
+  </div>
+  <section>
+</section>
+  <div class="bookingform">
+      <form action="/examples/actions/confirmation.php" method="post">
+          <h2>Book Date</h2>
+          <p>Please Fill The Form To Book a Date</p>
+          <hr>
+          <div class="form-group">
+              <div class="row">
+                  <div class="col"><input type="text" class="form-control" name="groom" placeholder="Groom Names" required="required"></div>
+                  <div class="col"><input type="text" class="form-control" name="bride" placeholder="Bride Names" required="required"></div>
+              </div>        	
+          </div>
+          <div class="form-group">
+              <input type="email" class="form-control" name="email" placeholder="Email" required="required">
+          </div>
+          <div class="form-group">
+              <input type="text" class="form-control" name="phone" placeholder="Phone Number" required="required">
+          </div>
+          <div class="form-group">
+              <input type="date" class="form-control" name="confirm_password" placeholder="wedding Date" required="required">
+          </div>        
+          <div class="form-group text-center">
+              <button type="submit" class="btn btn-primary btn-lg">Book</button>
+          </div>
+      </form>
+      
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>church</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Sermons</a></li>
+           
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Connected</h4>
+          <ul>
+            <li><a href="#">Watsapp group</a></li>
+            <li><a href="#">Prayers group</a></li>
+            <li><a href="#">Choir Group</a></li>
+            <li><a href="#">Worship group</a></li>
+            
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Calvary Ministries</h4>
+          <ul>
+            <li><a href="#">watch</a></li>
+            <li><a href="#">Give</a></li>
+            <li><a href="#">Baptism</a></li>
+            <li><a href="#">Weddings</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>follow us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <h4 style="margin-top: 10px;">Contact Us</h4>
+            <div class="content">
+              <form action="#">
+                <div class="email">
+                  <div class="text" style="color: white;">Email *</div>
+                  <input type="email" required>
+                </div>
+                <div class="msg">
+                  <div class="text" style="color: white;">Message *</div>
+                  <textarea rows="2" cols="25" required></textarea>
+                </div>
+                <div class="btn" >
+                  <button type="submit" style="background-color:#e67e22 ; color: white;">Send</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <center>
+        <span class="credit">Created By <a href="https://www.codingnepalweb.com">Calvary Ministries</a> | </span>
+        <span class="far fa-copyright"></span><span> 2020 All rights reserved.</span>
+      </center>
+    </div>
+  </footer>
+  
+</section>
+
+
+
+{%endblock%}

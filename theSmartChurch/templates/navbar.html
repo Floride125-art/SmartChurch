@@ -13,67 +13,178 @@
      
         }
     }
+    *{
+  padding:0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+body{
+  font-family: montserrat;
+}
+nav{
+  background: #e67e22;
+  height: 100px;
+  width: 100%;
+ 
+}
+label.logo{
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 100px;
+  font-weight: bold;
+}
+nav ul{
+  float: right;
+  margin-right: 20px;
+}
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+nav ul li a{
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+#forNav.active,#forNav:hover{
+  background: #5e3009;
+  transition: .5s;
+}
+#submit{
+    background-color: grey;
+    border-radius: 20px;
+}
+.checkbtn{
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
+@media (max-width: 952px){
+  label.logo{
+    font-size: 30px;
+    padding-left: 50px;
+  }
+  nav ul li a{
+    font-size: 16px;
+  }
+}
+@media (max-width: 858px){
+  .checkbtn{
+    display: block;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  a:hover,a.active{
+    background: none;
+    color:white;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+}
+section{
+  background: url(bg1.jpg) no-repeat;
+  background-size: cover;
+  height: calc(100vh - 80px);
+}
     </style>
 </head>
 
 <body id="mynav">
-    <div id="navbar" class="container-fluid" style="border-bottom: 1px solid rgb(168, 165, 165); background-color: #e67e22;">
-        <div class="row">
-            
-            <div class="col-md-2" style="padding-top:10px;">
-                <form class="form-inline my-2 my-lg-0" role="search" id='search_form' action="{% url 'search_results' %}" style="margin-left:10px;">
-                    <input type="text" class="form-control my-2 my-sm-0 search-input" name="project" placeholder="Search by title.." id="search">
-                </form>
-            </div>
-            <div class="col-md-8" style=" padding-top:5px;text-align:center;padding: 0 10px;">
-                <div class="row">
-                    <div class="col-md-10">
-                        <a class="navbar-brand navbar-right text-success" href="{% url 'index' %}" style="margin-left:120px;font-size:30px; font-family: 'Carter One', cursive; color: white; ">smartChurch</a>
-                    </div>
-                    
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        
+        <label class="logo">Calvary</label>
+        <ul>
+          <li><a class="active"  href="{% url 'index' %}" id="forNav">Home</a></li>
+          <li><a href="{% url 'about' %}" id="forNav">About</a></li>
+          <li><a href="#" id="forNav">Watch</a></li>
+          <li><a href="{% url 'give' %}" id="forNav">Give</a></li>
+          <li>
+            <!-- <div class="col-md-2" >
+                <div class="row" id='profile'>
                    
-                    <div class="col-md-2" style="padding-top:10px;">
-                        <div class="row" id='profile'>
-                            {% if user.is_authenticated %}
-                            <div class="col-md-8">
-                                
-                                <div class="dropdown">
-                                    <a class="btn btn text-success" data-toggle="dropdown" 
-                                        aria-haspopup="true" aria-expanded="false">{{ user.username }} <img src='{{user.profile.profile_picture.url}}' width='18px' height='18px' style='border-radius:50%;'>
-                                    </a>
-                                    <div class="dropdown-menu" style="width:300px;">
-                                        <a class="dropdown-item" href="{%url 'my_profile'%}">Profile</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="/logout">Logout</a>
-                                    </div>
-                                </div>
+                    <div class="col-md-8"> -->
+                        
+                        <div class="dropdown">
+                            <a class="btn btn" data-toggle="dropdown" 
+                            aria-haspopup="true" aria-expanded="false" style="color: white;"  id="forNav">Services 
+                            </a>
+                            <div class="dropdown-menu" style="width:200px; background-color: #e67e22;">
+                                <a class="dropdown-item" href="#" id="forNav"  style="color: white;">Baptism</a>
+                                <div class="dropdown-divider" id="forNav"></div>
+                                <a class="dropdown-item" href="{% url 'bookwedding' %}" id="forNav"  style="color: white;">Weddings</a>
                             </div>
-                            {% else %}
+                        <!-- </div>
+                    </div> -->
+                  
+                   
 
-                            <a class='btn btn-default text-danger' href="/accounts/login/?next=/">Login</a>
-
-                            {% endif %}
-                        </div>
-                    </div>
+          
                 </div>
             </div>
-            <div class="col-md-2 upload bg-warning" style="padding-top:15px; text-align:center;">
-                <a href="{%url 'new_project'%}" style="color:white; font-weight: bo; font-size:17px; text-decoration: none; ">Submit a Praching</a>
-            </div>
-            <div class="col-md-2"></div>
-        </div>
-    </div>
-    <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
-        }
+        </li>
+          <li><div><a href="{%url 'new_project'%}" id="submit" id="forNav">Submit Sermon</a></div></li>
+          <li>
+            <div class="col-md-2" >
+                <div class="row" id='profile'>
+                    {% if user.is_authenticated %}
+                    <div class="col-md-8">
+                        
+                        <div class="dropdown">
+                            <a class="btn btn" data-toggle="dropdown" 
+                                aria-haspopup="true" aria-expanded="false" style="color: white;"  id="forNav">{{ user.username }} <img src='{{user.profile.profile_picture.url}}' width='18px' height='18px' style='border-radius:50%;'>
+                            </a>
+                            <div class="dropdown-menu" style="width:300px; background-color: #e67e22;">
+                                <a class="dropdown-item" href="{%url 'my_profile'%}" id="forNav" style="color:white;">Profile</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/logout" id="forNav" style="color:white;">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% else %}
 
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft= "0";
-        }
-    </script>
+                    <a class='btn btn-default text-danger' href="/accounts/login/?next=/">Login</a>
+
+                    {% endif %}
+                </div>
+            </div>
+        </li>
+        </ul>
+      </nav>
+   
 </body>
 
 </html>
