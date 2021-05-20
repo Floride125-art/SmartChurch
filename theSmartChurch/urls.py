@@ -17,6 +17,7 @@ urlpatterns = [
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'bookwedding',views.bookwedding,name='bookwedding'), 
     url(r'about',views.about,name='about'), 
+     url(r'give',views.give,name='give'), 
 
 
 ]
