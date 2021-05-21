@@ -1,0 +1,216 @@
+{%extends 'base.html'%}
+{% load static%}
+{% block content %}
+{{block.super}}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>video</title>
+    <style>
+        oot{
+--purple: #FA3409;
+}
+
+
+*{
+margin: 0; padding: 0;
+box-sizing: border-box;
+}
+
+
+html{
+font-size: 62.5%;
+}
+
+
+.container .heading{
+font-size: 3rem;
+margin: 2rem 0;
+text-transform: capitalize;
+color: var(--purple);
+font-family: verdana, geneva, tahoma, sans-serif;
+letter-spacing: .2rem;
+text-align: center;
+text-shadow: 0 .3rem .5rem rgba(0,0,0,.5);
+
+}
+
+.video-container{
+display:flex;
+justify-content: center;
+flex-wrap: wrap;
+ 
+
+}
+
+.video-container .video{
+
+height:15rem;
+width: 25rem;
+margin: 2rem;
+box-shadow: 0 .5rem 1rem rgba(0,0,0,.5);
+overflow: hidden;
+border-radius: 1rem;
+}
+
+.video-container .video video{
+
+height: 100%;
+width: 100%;
+outline: none;
+object-fit: cover;
+border: none;
+cursor: pointer;
+}
+
+.small-img-row p{
+    margin-left: 20px;
+    color: #707070;
+    line-height: 22px;
+    font-size: 15px;
+     padding: 15px;
+  text-align: center;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+ border-radius: 1rem;
+  box-sizing: border-box;
+  color: #FA3409;
+}
+
+.video-container .video video:hover{
+transition: .2s linear;
+transform: scale(1.3);
+}
+
+
+.video-container .video .active{
+position: fixed;
+top:50%; left: 50%;
+transform: translate(-50%, -50%);
+height: auto;
+width: 80%;
+box-shadow: 0 0 0 100vh rgba(0,0,0,.7 );
+z-index: 1;
+}
+
+
+.video-container .video .active:hover{
+
+transition:none;
+transform: translate(-50%, -50%);
+}
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="container">
+
+        <div class="heading">videos for surmons
+
+        </div>
+
+        <div class="video-container">
+            <div class="small-img-row">
+                <div class="video">
+
+                    <video src="{% static 'static/videos/first.mp4' type='video/mp4' %}" ></video>
+                </div>
+                <p> sunday: live surmon </p>
+            </div>
+            <div class="small-img-row">
+                <div class="video">
+
+                    <video src="video2.mp4" muted></video>
+                </div>
+                <p> sunday: live surmon </p>
+            </div>
+
+            <div class="small-img-row">
+                <div class="video">
+
+                    <video src="video3.mp4" muted></video>
+                </div>
+                <p> sunday: live surmon </p>
+            </div>
+
+            <div class="small-img-row">
+                <div class="video">
+
+                    <video src="video4.mp4" muted></video>
+                </div>
+                <p> sunday: live surmon </p>
+            </div>
+
+
+            <div class="small-img-row">
+                <div class="video">
+
+                    <video src="video5.mp4" muted></video>
+                </div>
+                <p> sunday: live surmon </p>
+            </div>
+
+
+            <div class="small-img-row">
+                <div class="video">
+
+                    <video src="video6.mp4" type="video/mp4" muted></video>
+                </div>
+                <p> sunday: live surmon </p>
+            </div>
+
+            <div class="small-img-row">
+                <div class="video">
+
+                    <video src="video7.mp4" muted></video>
+                </div>
+                <p> sunday: live surmon </p>
+            </div>
+
+            <div class="small-img-row">
+                <div class="video">
+
+                    <video src="video8.mp4" muted></video>
+                </div>
+                <p> sunday: live surmon </p>
+            </div>
+
+
+
+
+        </div>
+
+
+    </div>
+
+
+    <script type="text/javascript">
+
+        var video = document.querySelectorAll('video')
+        video.forEach(play => play.addEventListener('click', () => {
+            play.classList.toggle('active');
+
+            if (play.paused) {
+                play.play();
+            } else {
+                play.paused();
+                play.currentTime = 0;
+
+
+            }
+
+
+        }));
+
+    </script>
+</body>
+</html>
+{%endblock%}

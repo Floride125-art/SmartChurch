@@ -31,6 +31,9 @@ def about(request):
 def give(request):
     projects = Project.objects.all().order_by('-date_posted')
     return render(request, 'give.html',{'projects':projects})
+def watch(request):
+    projects = Project.objects.all().order_by('-date_posted')
+    return render(request, 'watch.html',{'projects':projects})
 
 
 
