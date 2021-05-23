@@ -17,12 +17,8 @@ urlpatterns = [
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'bookwedding',views.bookwedding,name='bookwedding'), 
     url(r'about',views.about,name='about'), 
-<<<<<<< HEAD
     url(r'give',views.give,name='give'), 
     url(r'watch',views.watch,name='watch'), 
-=======
-     url(r'give',views.give,name='give'), 
->>>>>>> changed the design
 
 
 ]
