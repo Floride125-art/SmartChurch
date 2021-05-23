@@ -2,6 +2,11 @@ from django.db import models
 from django.contrib.auth.models import User
 import datetime as dt
 from django.db.models import Q
+from django.db import models
+from embed_video.fields import EmbedVideoField
+
+class Item(models.Model):
+    video = EmbedVideoField()
 
 # Create your models here.
 
