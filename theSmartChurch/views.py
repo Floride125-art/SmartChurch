@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
-from .models import Profile,Project
+from .models import Profile,Project, Item
 from .forms import NewProjectForm,ProfileUpdateForm,RegisterForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -31,6 +31,9 @@ def about(request):
 def give(request):
     projects = Project.objects.all().order_by('-date_posted')
     return render(request, 'give.html',{'projects':projects})
+def watch(request):
+    projects = Project.objects.all().order_by('-date_posted')
+    return render(request, 'watch.html',{'projects':projects})
 
 
 

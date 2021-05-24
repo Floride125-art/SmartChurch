@@ -35,6 +35,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'theSmartChurch',
+    'smartChurch',
     'bootstrap4',
     'star_ratings',
     'tinymce',
@@ -45,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'embed_video',
 ]
 
 MIDDLEWARE = [
