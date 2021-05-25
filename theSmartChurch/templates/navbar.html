@@ -24,7 +24,7 @@ body{
   font-family: montserrat;
 }
 nav{
-  background: #e67e22;
+  background:#474787;
   height: 100px;
   width: 100%;
  
@@ -52,14 +52,15 @@ nav ul li a{
   border-radius: 3px;
   text-transform: uppercase;
 }
-#forNav.active,#forNav:hover{
-  background: #5e3009;
+#forNav:active, #forNav:hover{
+  text-decoration: underline solid #fff 2px;
+  text-underline-offset:0.5em ;
   transition: .5s;
 }
-#submit{
+/* #submit{
     background-color: grey;
     border-radius: 20px;
-}
+} */
 .checkbtn{
   font-size: 30px;
   color: white;
@@ -89,12 +90,12 @@ nav ul li a{
     position: fixed;
     width: 100%;
     height: 100vh;
-    background: #2c3e50;
     top: 80px;
     left: -100%;
     text-align: center;
     transition: all .5s;
   }
+  
   nav ul li{
     display: block;
     margin: 50px 0;
@@ -103,6 +104,7 @@ nav ul li a{
   nav ul li a{
     font-size: 20px;
   }
+
   a:hover,a.active{
     background: none;
     color:white;
@@ -111,11 +113,8 @@ nav ul li a{
     left: 0;
   }
 }
-section{
-  background: url(bg1.jpg) no-repeat;
-  background-size: cover;
-  height: calc(100vh - 80px);
-}
+
+
     </style>
 </head>
 
@@ -142,8 +141,8 @@ section{
                             <a class="btn btn" data-toggle="dropdown" 
                             aria-haspopup="true" aria-expanded="false" style="color: white;"  id="forNav">Services 
                             </a>
-                            <div class="dropdown-menu" style="width:200px; background-color: #e67e22;">
-                                <a class="dropdown-item" href="#" id="forNav"  style="color: white;">Baptism</a>
+                            <div class="dropdown-menu" style="width:200px; background-color:#474787;">
+                                <a class="dropdown-item" href="#" id="forNavs"  style="color: white;">Baptism</a>
                                 <div class="dropdown-divider" id="forNav"></div>
                                 <a class="dropdown-item" href="{% url 'bookwedding' %}" id="forNav"  style="color: white;">Weddings</a>
                             </div>
@@ -156,7 +155,7 @@ section{
                 </div>
             </div>
         </li>
-          <li><div><a href="{%url 'announcement'%}" id="submit" id="forNav">submit Sermon</a></div></li>
+          <li><div><a href="{%url 'announcement'%}" id="forNav">submit Sermon</a></div></li>
           <li>
             <div class="col-md-2" >
                 <div class="row" id='profile'>
@@ -167,7 +166,7 @@ section{
                             <a class="btn btn" data-toggle="dropdown" 
                                 aria-haspopup="true" aria-expanded="false" style="color: white;"  id="forNav">{{ user.username }} <img src='{{user.profile.profile_picture.url}}' width='18px' height='18px' style='border-radius:50%;'>
                             </a>
-                            <div class="dropdown-menu" style="width:300px; background-color: #e67e22;">
+                            <div class="dropdown-menu" style="width:300px; background-color:#474787;">
                                 <a class="dropdown-item" href="{%url 'my_profile'%}" id="forNav" style="color:white;">Profile</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/logout" id="forNav" style="color:white;">Logout</a>
@@ -176,7 +175,7 @@ section{
                     </div>
                     {% else %}
 
-                    <a class='btn btn-default text-danger' href="/accounts/login/?next=/">Login</a>
+                    <a class='btn btn' href="/accounts/login/?next=/" style="color: white;">Login</a>
 
                     {% endif %}
                 </div>

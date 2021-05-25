@@ -20,6 +20,8 @@ urlpatterns = [
     url(r'about',views.about,name='about'), 
     url(r'give',views.give,name='give'), 
     url(r'watch',views.watch,name='watch'), 
+    url(r'sermons',views.sermons,name='sermons'), 
+    url(r'success', views.donate, name='success'), 
 
 
 ]

@@ -13,6 +13,7 @@ from rest_framework.views import APIView
 from .serializer import ProfileSerializer,ProjectSerializer, AnnouncementsSerializer
 from django.shortcuts import render
 import six
+from django.views.generic.base import TemplateView
 def index(request):
     projects = Project.objects.all().order_by('-date_posted')
     return render(request, 'index.html',{'projects':projects})
@@ -25,13 +26,30 @@ def bookwedding(request):
 def about(request):
     projects = Project.objects.all().order_by('-date_posted')
     return render(request, 'about.html',{'projects':projects})
+class give(TemplateView):
+    template_name = 'give.html'
+
+def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['key'] = settings.RAVE_PUBLIC_KEY
+        return context
 def give(request):
     projects = Project.objects.all().order_by('-date_posted')
     return render(request, 'give.html',{'projects':projects})
 def watch(request):
     projects = Project.objects.all().order_by('-date_posted')
     return render(request, 'watch.html',{'projects':projects})
+def sermons(request):
+    projects = Project.objects.all().order_by('-date_posted')
+    return render(request, 'sermons.html',{'projects':projects})
+def donate(request):
+    projects = Project.objects.all().order_by('-date_posted')
+    return render(request, 'donate.html',{'projects':projects})
 
+# def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context['key'] = settings.RAVE_PUBLIC_KEY
+#         return context
 
 
 def register(request):
