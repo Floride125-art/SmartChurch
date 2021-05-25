@@ -42,9 +42,12 @@ def watch(request):
 def sermons(request):
     projects = Project.objects.all().order_by('-date_posted')
     return render(request, 'sermons.html',{'projects':projects})
-def donate(request):
+def success(request):
     projects = Project.objects.all().order_by('-date_posted')
-    return render(request, 'donate.html',{'projects':projects})
+    return render(request, 'success.html',{'projects':projects})
+def allUsers(request):
+    projects = Project.objects.all().order_by('-date_posted')
+    return render(request, 'allUsers.html',{'projects':projects})
 
 # def get_context_data(self, **kwargs):
 #         context = super().get_context_data(**kwargs)

@@ -21,7 +21,8 @@ urlpatterns = [
     url(r'give',views.give,name='give'), 
     url(r'watch',views.watch,name='watch'), 
     url(r'sermons',views.sermons,name='sermons'), 
-    url(r'success', views.donate, name='success'), 
+    url(r'success', views.success, name='success'), 
+    url(r'allUsers', views.allUsers, name='allUsers'), 
 
 
 ]
