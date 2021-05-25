@@ -12,13 +12,13 @@
     <div class="row">
         <div class="col-lg-6" >
             <div style="text-align:center">
-                <img src="{{profile.profile_picture.url}}"  width="200px"  height="200px " style="border-radius: 50%; background-color: white;">
+                <img src="{{profile.profile_picture.url}}"  width="200px"  height="200px " style="border-radius: 50%;">
             </div>
         </div><br>
         <div class="col-md-6 col-lg-6">
             <div class="card-1" >
                 <div class="text-warning card-text" style="padding: 20px;">
-                    <h5 style="background-color: white;"><strong>Username:</strong> {{profile.user}}</h5>
+                    <h5><strong>Username:</strong> {{profile.user}}</h5>
                     <h5><strong>Email:</strong> {{profile.email}}</h5>
                     <h5><strong>Bio:</strong>{{profile.bio}}</h5>
                     <h5><strong>Contact:</strong> {{profile.contact}}</h5>
@@ -28,7 +28,7 @@
 
         </div>
     </div><hr>
-    <small><strong class="text-warning">There Is  {{projects|length}} Sermons you submitted</strong></small><br><br>
+    <small><strong class="text-warning">There Is  {{projects|length}} Submited projects</strong></small><br><br>
     <div class='row'>
         {% for project in projects %}
         <div class="col-lg-4 col-lg-4 col-lg-4">
@@ -37,7 +37,7 @@
                 <div class="card-text text-center" style="padding: 20px;">
                     <h5 style="font-weight: bold;">{{project.title}}</h5>
                     <small class="text-muted" style="font-family: Arial, Helvetica, sans-serif;">{{project.description | slice:":50" }}...</small><br><br>
-                    <a class="btn" style="border-radius: 25px; background-color:#e67e22 ;" href="/project/{{project.id}}" >Sermons details & Rating</a><br><br>
+                    <a class="btn btn-info" style="border-radius: 25px;" href="/project/{{project.id}}" >Project details & Rating</a><br><br>
                 </div>
             </div>
         </div>
