@@ -6,7 +6,8 @@ from .models import Profile,Project, Item
 from .forms import NewProjectForm,ProfileUpdateForm,RegisterForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate,login
+from django.contrib import messages
+from django.contrib.auth import authenticate,login,logout
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -31,13 +32,10 @@ def about(request):
 def give(request):
     projects = Project.objects.all().order_by('-date_posted')
     return render(request, 'give.html',{'projects':projects})
-<<<<<<< HEAD
+
 def watch(request):
     projects = Project.objects.all().order_by('-date_posted')
     return render(request, 'watch.html',{'projects':projects})
-=======
->>>>>>> changed the design
-
 
 
 def register(request):
@@ -45,15 +43,19 @@ def register(request):
         form = RegisterForm(request.POST)
         if form.is_valid():
             form.save()
-            username = form.cleaned_data.get('username')
+
+            username = form.cleaned_data.get('username') 
+            
             password = form.cleaned_data.get('password1')
             email = form.cleaned_data.get('email')
             
             user = User.objects.get(username=username)
+            
             profile=Profile.objects.create(user=user,email=email)
             user = authenticate(username=username, password=password)
+            messages.success(request ,"Account was created for "+username)
             login(request, user)
-            return redirect('index')
+            return redirect('login')
     else:
         form = RegisterForm()
     return render(request,'registration/registration_form.html')
