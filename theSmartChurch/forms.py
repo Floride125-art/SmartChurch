@@ -1,5 +1,5 @@
 from django import forms
-from .models import Profile, Project
+from .models import Profile, Project, Announcements
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
@@ -16,6 +16,10 @@ class RegisterForm(UserCreationForm):
 class NewProjectForm(forms.ModelForm):
     class Meta:
         model = Project
+        exclude = ['user']
+class AnnouncementForm(forms.ModelForm):
+    class Meta:
+        model = Announcements
         exclude = ['user']
 
 class ProfileUpdateForm(forms.ModelForm):

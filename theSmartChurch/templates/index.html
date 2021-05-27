@@ -4,9 +4,10 @@
 {{block.super}}
 
 <style>
-  *{
+  * {
     max-width: 100%;
   }
+
   .hovereffect {
     width: 100%;
     height: 100%;
@@ -102,20 +103,59 @@
 
   .view {
     min-height: 100%;
+<<<<<<< HEAD
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1516831972173-00f3d79da863?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGNodXJjaCUyMHNlcnZpY2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
+=======
+    background: linear-gradient(rgba(1, 9, 26, 0.5), rgba(1, 9, 26, 0.5)), url('https://i.postimg.cc/9XS5BHNk/aka.png');
+>>>>>>> a2c5750e0fa6a774621e5dfe9850de1922a14ff6
     background-size: cover;
+    animation: slide 20s infinite;
+    animation-delay: 10s;
     background-repeat: no-repeat;
     background-position: bottom;
     width: 100%;
-
     overflow: hidden;
   }
-  
-  #theCards{
-  /* position: absolute;
+
+  @keyframes slide {
+
+    30% {
+      background-image: linear-gradient(rgba(1, 9, 26, 0.5), rgba(1, 9, 26, 0.5)), url("https://i.postimg.cc/6pr7C0z8/youare.png");
+      animation-delay: 5s;
+      animation: slide 15s infinite;
+    }
+
+    50% {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://i.postimg.cc/2ynqT7m9/focus.png");
+    }
+
+
+    100% {
+      background-image: linear-gradient(rgba(1, 9, 26, 0.5), rgba(1, 9, 26, 0.5)), url("https://i.postimg.cc/Bv1JxQJM/bigg.png");
+    }
+
+    /* 20%{
+    background-image: linear-gradient(rgba(1, 9, 26, 0.5), rgba(1, 9, 26, 0.5)),url("https://i.postimg.cc/Prcc1bNn/bibiriy.png");
+
+} */
+    /* 75%{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://i.postimg.cc/1X8BzTGn/lift.png");
+
+} */
+    /* 25%{
+    background-image:linear-gradient(rgba(1, 9, 26, 0.5), rgba(1, 9, 26, 0.5)), url("https://i.postimg.cc/Vsh4hfwj/saraba.png");
+} */
+
+
+  }
+
+
+  #theCards {
+    /* position: absolute;
   left: 50%;
   top: 50%;
   transform: translateY(-50%) translateX(-50%); */
+<<<<<<< HEAD
   width: 100%;
 display: flex;
 } 
@@ -278,14 +318,145 @@ ul{
 }
 @media(max-width: 574px){
   .footer-col{
+=======
+>>>>>>> a2c5750e0fa6a774621e5dfe9850de1922a14ff6
     width: 100%;
-}
-}
-.bottom{
-  align-items: bottom;
-  margin-top: 20px;
-  margin-bottom: -10px;
+    display: flex;
+  }
 
+  .media {
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    position: absolute;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+
+  figure {
+    height: 370px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  figure a {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+  }
+
+  .learned a {
+    position: relative;
+    margin-left: 18px;
+  }
+
+  figure:hover .media {
+    transform: scale(1.25);
+  }
+
+  figcaption {
+    color: #474787;
+    height: calc(100% - 30px);
+    margin: 15px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 250px;
+  }
+
+  .body {
+    background-color: white;
+    bottom: 0;
+    padding: 15px;
+    position: absolute;
+    width: 100%;
+  }
+
+  svg {
+    height: inherit;
+    width: 100%;
+  }
+
+  svg text {
+    text-anchor: middle;
+  }
+
+  svg #alpha {
+    fill: white;
+  }
+
+  svg .title {
+    font-size: 28px;
+    font-family: "Montserrat";
+    letter-spacing: 5px;
+  }
+
+  svg #base {
+    fill: white;
+    -webkit-mask: url(#mask);
+    mask: url(#mask);
+  }
+
+  svg #base2 {
+    fill: white;
+    -webkit-mask: url(#mask2);
+    mask: url(#mask2);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .container {
+    max-width: 1170px;
+    margin: auto;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  .footer {
+    background-color: #474787;
+    padding: 20px 0;
+  }
+
+  .footer-col {
+    width: 25%;
+    padding: 0 15px;
+  }
+
+  .footer-col h4 {
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+  }
+
+  .footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #474787;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+  }
+
+<<<<<<< HEAD
 }
 .bottom center a{
   color: #227093;
@@ -297,12 +468,80 @@ ul{
 .bottom center span{
   color: #656565;
 }
+=======
+  .footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+  }
+>>>>>>> a2c5750e0fa6a774621e5dfe9850de1922a14ff6
 
+  .footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #ffffff;
+    display: block;
+    transition: all 0.3s ease;
+  }
 
+  .footer-col ul li a:hover {
+    color: #ffffff;
+    padding-left: 8px;
+  }
 
+  .footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+  }
 
+  .footer-col .social-links a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+  }
 
+  /*responsive*/
+  @media(max-width: 767px) {
+    .footer-col {
+      width: 50%;
+      margin-bottom: 30px;
+    }
+  }
 
+  @media(max-width: 574px) {
+    .footer-col {
+      width: 100%;
+    }
+  }
+
+  .bottom {
+    align-items: bottom;
+    margin-top: 20px;
+    margin-bottom: -10px;
+
+  }
+
+  .bottom center a {
+    color: #ffffff;
+    text-decoration: none;
+
+  }
+
+  .bottom center a:hover {
+    text-decoration: underline;
+  }
+
+  .bottom center span {
+    color: #fff;
+  }
 </style>
 
 
@@ -322,8 +561,14 @@ ul{
             Calvary Ministries</a></p>
       </div>
       <div style="text-align:center; font-size: 20px;">
+<<<<<<< HEAD
         <button style=" border-radius: 5em; border:none; padding: 10px; background-color: #227093;"><a 
             style="color: white; font-weight:bold;text-decoration:none;" href="#trt">View Sermons</a></button>
+=======
+        <button style=" border-radius: 5em; border:none; padding: 10px; background-color:#474787;"><a
+            style="color: white; font-weight:bold;text-decoration:none;" href="{% url 'sermons' %}">View
+            Sermons</a></button>
+>>>>>>> a2c5750e0fa6a774621e5dfe9850de1922a14ff6
       </div>
       <div style="height:230px;">
 
@@ -332,151 +577,164 @@ ul{
   </div>
 </div>
 <div class="venue-gray-bg"></div>
-<div class="jumbotron " style="background-image: url('https://i.postimg.cc/RVWw4m2m/niyo.webp'); background-size:cover ; width: 100%; height: 100%;">
-<div class="row" >
-  <div class="col-md-6" style="flex: 0 0 50%; max-width: 50%;position: relative;
+<div class="jumbotron " style="background-size:cover ; width: 100%; height: 100%;">
+  <div class="row">
+    <div class="col-md-6" style="flex: 0 0 50%; max-width: 50%;position: relative;
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;">
-    <img class="img-fluid main-venue-image"
-      src="https://go2cornerstone.com/wp-content/uploads/2021/03/Onsite-1024x683.jpg">
-    <div class="gray-box position-relative md-main-venue-content" style="margin-top: -5%;left: 5%;">
-      <h3 class="inside-boxes d-inline-block terracota-box venue-name" style="letter-spacing: 2px;
+      <img class="img-fluid main-venue-image"
+        src="https://go2cornerstone.com/wp-content/uploads/2021/03/Onsite-1024x683.jpg">
+      <div class="gray-box position-relative md-main-venue-content" style="margin-top: -5%;">
+        <h4 class="inside-boxes d-inline-block terracota-box venue-name" style="letter-spacing: 2px;
       padding: 10px 16px;
-      text-transform: uppercase;background-color: #c97f3a;
-color: #fff;margin-top: -1.375em;
-margin-left: 1em;
-margin-right: 1em;">Onsite Services</h3>
-      <div class="venue-description" style="white-space: pre-wrap;
+      text-transform: uppercase;background-color:#474787;
+      color: #fff;margin-top: -1.375em;
+      margin-right: 1em;">Onsite Services</h4>
+        <div class="venue-description" style="white-space: pre-wrap;
       padding: 1em 2.25em 2.325em 2.25em;
-      font-size: 1.5em;
-      max-width: 550px;box-sizing: border-box;background-color: grey; color: white;
+      font-size: 1.1em;
+      max-width: 600px;
+      box-sizing: border-box;background-color:#474787; color: white;
       margin-top: -5%;
       "> Sundays
-        Main Service
-        9:00, 10:20, and 11:40am in main sanctuary and outside on the patio
-        Classic Service
-        9:00am in small church
+          Main Service
+          9:00, 10:20, and 11:40am in main sanctuary and outside on the patio
+          9:00am in small church
 
-        <a href="" class="btn" style="background-color:#c97f3a ; color: white;">Get Directions</a>
+          <a href="" class="btn"
+            style="background-color:#474787 ; color: white; border-radius: 30px; border: 1px solid #ffffff;">Get
+            Directions</a>
+        </div>
       </div>
-    </div>
 
-  </div>
-  <div class="col-md-6" style="margin-top: -6.7%;">
-    <div style="height:40px;">
-      <!--padding to make up for removal of weekend services -->
     </div>
-    <div class="text-center" style="display:none;">
-      <h3 class="inside-boxes text-center mt-5 d-none d-md-inline-block gray-box">WEEKEND
-        SERVICES</h3>
-    </div>
-    <img class="img-fluid mt-5 md-secondary-venue-image" src="https://i.postimg.cc/CM4fn1sK/party-Church.jpg">
-    <div class="gray-box position-relative md-secondary-venue-content" style="margin-top: -14%; left: 5%;">
-      <h3 class="inside-boxes d-inline-block terracota-box venue-name" style="letter-spacing: 2px;
+    <div class="col-md-6" style="margin-top: -6.7%;">
+      <div style="height:40px;">
+        <!--padding to make up for removal of weekend services -->
+      </div>
+      <!-- <div class="text-center" style="display:none;">
+        <h3 class="inside-boxes text-center mt-5 d-none d-md-inline-block gray-box">WEEKEND
+          SERVICES</h3>
+      </div> -->
+      <img class="img-fluid mt-5 md-secondary-venue-image" src="https://i.postimg.cc/CM4fn1sK/party-Church.jpg"
+        style="height: 48%;">
+      <div class="gray-box position-relative md-secondary-venue-content" style="margin-top: -14%; ">
+        <h4 class="inside-boxes d-inline-block terracota-box venue-name" style="letter-spacing: 2px;
       padding: 10px 16px;
-      text-transform: uppercase;background-color: #c97f3a;
+      text-transform: uppercase;background-color:#474787;
           color: #fff;margin-top: 1.375em;
-            margin-left: 1em;
-          margin-right: 1em;">Online Services</h3>
-      <div class="venue-description"
-        style="white-space: pre-wrap;
+            /* margin-left: 1em; */
+          margin-right: 1em;">Online Services</h4>
+
+        <div class="venue-description" style="white-space: pre-wrap;
       padding: 1em 2.25em 2.325em 2.25em;
-      font-size: 1.5em;
-      max-width: 550px;box-sizing: border-box;background-color: grey; color: white; margin-top: -5%;"> Sundays
-        9:00, 10:20, and 11:40am
+      font-size: 1.1em;
+      max-width: 600px;
+      
+      box-sizing: border-box;
+      background-color:#474787; 
+      color: white; 
+      margin-top: -4%;">
+          Sundays
+          9:00, 10:20, and 11:40am
+          Join us live during any of our weekend services.
+          Watch last week live
+          4:00pm on our Parish
 
-        Join us live during any of our weekend services.
-
-        <a href="" class="btn" style="background-color:#c97f3a ; color: white;">Watch Live</a>
+          <a href="" class="btn"
+            style="background-color:#474787 ; color: white; border-radius: 30px; border: 1px solid #ffffff;">Watch
+            Live</a>
+        </div>
       </div>
     </div>
+
   </div>
-
 </div>
-</div>
-<div class= "jumbotron" style="background-image: url('https://i.postimg.cc/8cWLSBnv/grey-removebg-preview.png'); background-repeat: no-repeat; background-size: cover; width: 100%; height: 100%;">
-  <h1 style="text-align: center; color: #c97f3a;">Sunday School</h1>
-<div class="container" style="margin-top: 50px;">
-  <div class="row">
-    <div class="col-md-6">
-      <img src="https://i.postimg.cc/d0Dr5YvD/forkids.png" 
-      
-      >
+<div class="jumbotron"
+  style="background-image: url('https://i.postimg.cc/8cWLSBnv/grey-removebg-preview.png'); background-repeat: no-repeat; background-size: cover; width: 100%; height: 100%; margin-top: -100px;">
+  <h1 style="text-align: center; color:#474787;">Sunday School</h1>
+  <div class="container" style="margin-top: 50px;">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="https://i.postimg.cc/d0Dr5YvD/forkids.png">
 
+      </div>
+      <div class="col-md-6" data-aos="fade-up">
+        <p style=" font-size: 1.0em;">Sunday School is the best time meet up with kids and we get to share with them
+          word of God.
+          Kids get enought time to learn how to priotilize the word of God in their lives as they grow up
+          with discipline and respect they got from Sunday School.
+        </p>
+        <p>This smartChurch really made it easily for kids to be able to receive word of God anywhere they are
+          as we provide them different sermons that really strengthen them in their life with God. They also get
+          to learn different versuses from bible and watch video that really explain important of God in their life
+        </p>
+        <div
+          style="text-decoration: none; background-color:#474787; color: white; border-radius: 20px; width: 130px; padding: 10px;">
+          <a href="#" style="color: white;">Learn More</a>
+        </div>
+      </div>
     </div>
-    <div class="col-md-6" data-aos="fade-up">
-      <p>Sunday School is the best time meet up with kids and we get to share with them  word of God.
-        Kids get enought time to learn how to priotilize the word of God in their lives as they grow up 
-        with discipline and respect they got from Sunday School.
-      </p>
-      <p>This smartChurch really made it easily for kids to be able to receive word of God anywhere they are 
-        as we provide them different sermons that really strengthen them in their life with God. They also get 
-        to learn different versuses from bible and watch video that really explain important of God in their life
-      </p>
-      <div style="text-decoration: none; background-color: #c97f3a; color: white; border-radius: 20px; width: 130px; padding: 10px;">
-      <a href="#" style="color: white;">Learn More</a>
-    </div>
-    </div>
+
   </div>
-
-</div>
 </div>
 <div class="jumbotron">
-<div class="container-fluid" id="theCards">
-  <div class="col-lg-6 col-lg-offset-0 col-md-6 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-12">
-    <figure>
-      <div class="media" style="background-image: url(https://i.postimg.cc/0jHmyczD/raise.png)"></div>
-      <figcaption>
-        <svg viewBox="0 0 200 200" version="1.1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <mask id="mask" x="0" y="0" width="100%" height="100%">
-              <rect id="alpha" x="0" y="0" width="100%" height="100%"></rect>
-              <text class="title" dx="50%" dy="2.5em">ABOUT</text>
-              <text class="title" dx="50%" dy="3.5em">THE</text>
-              <text class="title" dx="50%" dy="4.5em">BAPTISM</text>
-            </mask>
-          </defs>
-          <rect id="base" x="0" y="0" width="100%" height="100%"></rect>
-        </svg>
-        <div class="body">
-          <p>Do you want to recieve Jesus as your savior? Don't worry at Calvary we got you covered !</p>
-         
-          
-        </div>
-        <div class="learned">
-          <a href="" style="text-decoration: none; color: #c97f3a;">Learn more</a>
-        </div>
-      </figcaption><a href="#"></a>
-    </figure>
-  </div>
-  <div class="col-lg-6">
-    <figure>
-      <div class="media" style="background-image: url(https://i.postimg.cc/Gpwc1Gm2/CROSS.png)"></div>
-      <figcaption>
-        <svg viewBox="0 0 200 200" version="1.1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <mask id="mask2" x="0" y="0" width="100%" height="100%">
-              <rect id="alpha" x="0" y="0" width="100%" height="100%"></rect>
-              <text class="title" dx="50%" dy="2.5em">ABOUT</text>
-              <text class="title" dx="50%" dy="3.5em">THE</text>
-              <text class="title" dx="50%" dy="4.5em">PRAYERS</text>
-            </mask>
-          </defs>
-          <rect id="base2" x="0" y="0" width="100%" height="100%"></rect>
-        </svg>
-        <div class="body">
-          <p>At Calivary we do have several types of Prayers. do you want to join us?</p>
-        </div>
-        <div class="learned">
-          <a href="" style="text-decoration: none; color: #c97f3a;">Learn more</a>
-        </div>
-      </figcaption><a href="#"></a>
-    </figure>
+  <div class="container-fluid" id="theCards">
+    <div class="col-lg-6 col-lg-offset-0 col-md-6 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-12">
+      <figure>
+        <div class="media" style="background-image: url(https://i.postimg.cc/2ynqT7m9/focus.png)"></div>
+        <figcaption>
+          <svg viewBox="0 0 200 200" version="1.1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <mask id="mask" x="0" y="0" width="100%" height="100%">
+                <rect id="alpha" x="0" y="0" width="100%" height="100%"></rect>
+                <text class="title" dx="50%" dy="2.5em">ABOUT</text>
+                <text class="title" dx="50%" dy="3.5em">THE</text>
+                <text class="title" dx="50%" dy="4.5em">BAPTISM</text>
+              </mask>
+            </defs>
+            <rect id="base" x="0" y="0" width="100%" height="100%"></rect>
+          </svg>
+          <div class="body" style=" font-size: 1.0em;">
+            <p style="color: black;">Do you want to recieve Jesus as your savior? Don't worry at Calvary we got you
+              covered !</p>
+
+
+          </div>
+          <div class="learned" style=" font-size: 1.0em;">
+            <a href="{% url 'about' %}" style="text-decoration: none; color:#474787;">Learn more</a>
+          </div>
+        </figcaption><a href="#"></a>
+      </figure>
+    </div>
+    <div class="col-lg-6">
+      <figure>
+        <div class="media" style="background-image: url(https://i.postimg.cc/y6PqwSdw/senga.png)"></div>
+        <figcaption>
+          <svg viewBox="0 0 200 200" version="1.1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <mask id="mask2" x="0" y="0" width="100%" height="100%">
+                <rect id="alpha" x="0" y="0" width="100%" height="100%"></rect>
+                <text class="title" dx="50%" dy="2.5em">ABOUT</text>
+                <text class="title" dx="50%" dy="3.5em">THE</text>
+                <text class="title" dx="50%" dy="4.5em">PRAYERS</text>
+              </mask>
+            </defs>
+            <rect id="base2" x="0" y="0" width="100%" height="100%"></rect>
+          </svg>
+          <div class="body" style=" font-size: 1.0em;">
+            <p style="color: black;">At Calivary we do have several types of Prayers. do you want to join us?</p>
+          </div>
+          <div class="learned" style=" font-size: 1.0em;">
+            <a href="{% url 'about' %}" style="text-decoration: none; color:#474787;">Learn more</a>
+          </div>
+        </figcaption><a href="#"></a>
+      </figure>
+    </div>
   </div>
 </div>
-</div>
-<div id="trt">
+<!-- <div id="trt">
   <p
     style='height:20vh;padding-top:9vh;font-family:  "Carter One", cursive;text-align: center; font-size: 130%; color: #227093;'>
     <strong>Click On Sermon to Rate it!</strong>
@@ -510,6 +768,68 @@ margin-right: 1em;">Onsite Services</h3>
     </div>
     {% endfor %}
   </div>
+</div> -->
+<div class="jumbtron">
+  <div id="mainverse_container" style="margin-left: 20%; margin-right: 20%; text-align: center;">
+    <div id="mainverse">
+      <p id="verse"></p>
+      <span id="verse_reference"></span>
+    </div>
+  </div>
+  <script>
+    // Ajax Call to the api
+    let url = 'https://beta.ourmanna.com/api/v1/get/?format=json&order=random';
+    let text = document.querySelector("#mainverse_container #mainverse #verse");
+    let reference = document.querySelector("#mainverse_container #mainverse #verse_reference");
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        document.querySelector("#mainverse_container").style.display = "block"
+        let result = xhr.responseText;
+        let json = JSON.parse(result);
+        text.innerHTML = json.verse.details["text"];
+        reference.innerHTML = json.verse.details["reference"];
+      }
+    }
+    xhr.send()
+
+  </script>
+  <div class="Container" id="myverses" style="margin-left: 5%; margin-right: 5%; text-align: justify;">
+    <div class="row">
+      <div class="col-md-4">
+        <p id="verse">
+          <!-- "And let us consider how we may spur one another on toward love and good deeds, not giving up meeting
+            together, as some are in the habit of doing,
+            but encouraging one another—and all the more as you
+            see." -->
+          </p>
+            <span id="verse_reference"></span>
+
+      </div>
+      <div class="col-md-4">
+        <p id="verse">
+      <span id="verse_reference"></span>
+
+        <!-- <p><i>"For just as each of us has one body with many members,
+            and these members do not all have the same function, so in Christ we, though many,
+            form one body, and each member belongs to all the others.</i></p>
+        <p><i>Romans 12:4-5"</i></p> -->
+
+      </div>
+      <div class="col-md-4">
+        <p id="verse">
+        <span id="verse_reference"></span></i>
+        <!-- <p><i>"All Scripture is God-breathed and is useful for teaching,
+            rebuking, correcting and training in righteousness, so that the servant of God may be
+            thoroughly equipped for every good work."</i></p>
+        <p><i>2Timothy 3:16-17</i></p> -->
+
+      </div>
+    </div>
+  </div>
+
 </div>
 <footer class="footer">
   <div class="container">
@@ -520,7 +840,7 @@ margin-right: 1em;">Onsite Services</h3>
           <li><a href="#">About</a></li>
           <li><a href="#">Services</a></li>
           <li><a href="#">Sermons</a></li>
-         
+
         </ul>
       </div>
       <div class="footer-col">
@@ -530,7 +850,7 @@ margin-right: 1em;">Onsite Services</h3>
           <li><a href="#">Prayers group</a></li>
           <li><a href="#">Choir Group</a></li>
           <li><a href="#">Worship group</a></li>
-          
+
         </ul>
       </div>
       <div class="footer-col">
@@ -560,8 +880,13 @@ margin-right: 1em;">Onsite Services</h3>
                 <div class="text" style="color: white;">Message *</div>
                 <textarea rows="2" cols="25" required></textarea>
               </div>
+<<<<<<< HEAD
               <div class="btn" >
                 <button type="submit" style="background-color:#227093 ; color: white;">Send</button>
+=======
+              <div class="btn">
+                <button type="submit" style="background-color:#474787; color: white;">Send</button>
+>>>>>>> a2c5750e0fa6a774621e5dfe9850de1922a14ff6
               </div>
             </form>
           </div>
@@ -571,7 +896,8 @@ margin-right: 1em;">Onsite Services</h3>
   </div>
   <div class="bottom">
     <center>
-      <span class="credit">Created By <a href="https://www.codingnepalweb.com">Calvary Ministries</a> | </span>
+      <span class="credit">Created By <a href="{% url 'index' %}" style="color: #ffffff;">Calvary Ministries</a> |
+      </span>
       <span class="far fa-copyright"></span><span> 2020 All rights reserved.</span>
     </center>
   </div>

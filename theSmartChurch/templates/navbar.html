@@ -24,8 +24,8 @@ body{
   font-family: montserrat;
 }
 nav{
-  background: #227093;
-  height: 70px;
+  background:#474787;
+  height: 100px;
   width: 100%;
   font-style: italic;
   
@@ -54,14 +54,16 @@ nav ul li a{
   border-radius: 3px;
   text-transform: uppercase;
 }
-#forNav.active,#forNav:hover{
-  background: #5e3009;
+#forNav:active, #forNav:hover{
+  text-decoration: underline solid #fff 2px;
+  text-underline-offset:0.5em ;
   transition: .5s;
+  background-color: none;
 }
-#submit{
+/* #submit{
     background-color: grey;
     border-radius: 20px;
-}
+} */
 .checkbtn{
   font-size: 30px;
   color: white;
@@ -91,12 +93,12 @@ nav ul li a{
     position: fixed;
     width: 100%;
     height: 100vh;
-    background: #2c3e50;
     top: 80px;
     left: -100%;
     text-align: center;
     transition: all .5s;
   }
+  
   nav ul li{
     display: block;
     margin: 50px 0;
@@ -105,19 +107,18 @@ nav ul li a{
   nav ul li a{
     font-size: 20px;
   }
-  a:hover,a.active{
+
+  /* a:hover,a.active{
     background: none;
     color:white;
-  }
+  } */
   #check:checked ~ ul{
     left: 0;
   }
+ 
 }
-section{
-  background: url(bg1.jpg) no-repeat;
-  background-size: cover;
-  height: calc(100vh - 80px);
-}
+
+
     </style>
 </head>
 
@@ -127,8 +128,11 @@ section{
         <label for="check" class="checkbtn">
           <i class="fas fa-bars"></i>
         </label>
+        <a href="{% url 'index' %}">
+        <img src="https://i.postimg.cc/BnbcSwgQ/image-1.png" style=" width: 10%; height: 100%;">
+      </a>
         
-        <label class="logo">Calvary</label>
+        <!-- <label class="logo">Calvary</label> -->
         <ul>
           <li><a class="active"  href="{% url 'index' %}" id="forNav">Home</a></li>
           <li><a href="{% url 'about' %}" id="forNav">About</a></li>
@@ -144,8 +148,8 @@ section{
                             <a class="btn btn" data-toggle="dropdown" 
                             aria-haspopup="true" aria-expanded="false" style="color: white;"  id="forNav">Services 
                             </a>
-                            <div class="dropdown-menu" style="width:200px; background-color: #227093;">
-                                <a class="dropdown-item" href="#" id="forNav"  style="color: white;">Baptism</a>
+                            <div class="dropdown-menu" style="width:200px; background-color:#474787;">
+                                <a class="dropdown-item" href="#" style="color: white;">Baptism</a>
                                 <div class="dropdown-divider" id="forNav"></div>
                                 <a class="dropdown-item" href="{% url 'bookwedding' %}" id="forNav"  style="color: white;">Weddings</a>
                             </div>
@@ -158,7 +162,7 @@ section{
                 </div>
             </div>
         </li>
-          <li><div><a href="{%url 'new_project'%}" id="submit" id="forNav">Submit Sermon</a></div></li>
+          <li><div><a href="{%url 'new_project'%}" id="forNav">submit Sermon</a></div></li>
           <li>
             <div class="col-md-2" >
                 <div class="row" id='profile'>
@@ -169,7 +173,7 @@ section{
                             <a class="btn btn" data-toggle="dropdown" 
                                 aria-haspopup="true" aria-expanded="false" style="color: white;"  id="forNav">{{ user.username }} <img src='{{user.profile.profile_picture.url}}' width='18px' height='18px' style='border-radius:50%;'>
                             </a>
-                            <div class="dropdown-menu" style="width:300px; background-color: #227093;">
+                            <div class="dropdown-menu" style="width:300px; background-color:#474787;">
                                 <a class="dropdown-item" href="{%url 'my_profile'%}" id="forNav" style="color:white;">Profile</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/logout" id="forNav" style="color:white;">Logout</a>
@@ -178,7 +182,7 @@ section{
                     </div>
                     {% else %}
 
-                    <a class='btn btn-default text-danger' href="/accounts/login/?next=/">Login</a>
+                    <a class='btn btn' href="/accounts/login/?next=/" style="color: white;">Login</a>
 
                     {% endif %}
                 </div>

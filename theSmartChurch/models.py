@@ -68,15 +68,9 @@ class Project(models.Model):
         return search
 class Announcements(models.Model):
     title = models.CharField(max_length=50)
-    image = models.ImageField(upload_to='images/', default='')
     description = models.CharField(max_length=200)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_name = models.ForeignKey(User, on_delete=models.CASCADE)
     date_posted = models.DateTimeField(auto_now=True)
-    link = models.URLField(max_length=250)
-    country = models.CharField(max_length=50)
-
-    
-
     def __str__(self):
         return self.title
     
@@ -91,5 +85,5 @@ class Announcements(models.Model):
 
     @classmethod
     def search(cls,searchterm):
-        search = Project.objects.filter(Q(title__icontains=searchterm)|Q(description__icontains=searchterm)|Q(country__icontains=searchterm))
+        search = Announcements.objects.filter(Q(title__icontains=searchterm)|Q(description__icontains=searchterm)|Q(country__icontains=searchterm))
         return search

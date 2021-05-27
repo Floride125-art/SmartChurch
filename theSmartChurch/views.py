@@ -2,8 +2,8 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
-from .models import Profile,Project, Item
-from .forms import NewProjectForm,ProfileUpdateForm,RegisterForm
+from .models import Profile,Project
+from .forms import NewProjectForm,ProfileUpdateForm,RegisterForm, AnnouncementForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -11,12 +11,10 @@ from django.contrib.auth import authenticate,login,logout
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .serializer import ProfileSerializer,ProjectSerializer
+from .serializer import ProfileSerializer,ProjectSerializer, AnnouncementsSerializer
 from django.shortcuts import render
 import six
-
-# Create your views here.
-
+from django.views.generic.base import TemplateView
 def index(request):
     projects = Project.objects.all().order_by('-date_posted')
     return render(request, 'index.html',{'projects':projects})
@@ -29,6 +27,13 @@ def bookwedding(request):
 def about(request):
     projects = Project.objects.all().order_by('-date_posted')
     return render(request, 'about.html',{'projects':projects})
+class give(TemplateView):
+    template_name = 'give.html'
+
+def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['key'] = settings.RAVE_PUBLIC_KEY
+        return context
 def give(request):
     projects = Project.objects.all().order_by('-date_posted')
     return render(request, 'give.html',{'projects':projects})
@@ -36,7 +41,20 @@ def give(request):
 def watch(request):
     projects = Project.objects.all().order_by('-date_posted')
     return render(request, 'watch.html',{'projects':projects})
+def sermons(request):
+    projects = Project.objects.all().order_by('-date_posted')
+    return render(request, 'sermons.html',{'projects':projects})
+def success(request):
+    projects = Project.objects.all().order_by('-date_posted')
+    return render(request, 'success.html',{'projects':projects})
+def allUsers(request):
+    projects = Project.objects.all().order_by('-date_posted')
+    return render(request, 'allUsers.html',{'projects':projects})
 
+# def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context['key'] = settings.RAVE_PUBLIC_KEY
+#         return context
 
 def register(request):
     if request.method == 'POST':
@@ -118,6 +136,21 @@ def new_project(request):
     else:
         form = NewProjectForm()
     return render(request, 'newProject.html', {"form":form, "current_user":current_user})
+
+@login_required(login_url='/accounts/login/')     
+def announcement(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form =AnnouncementForm(request.POST, request.FILES)
+        if form.is_valid():
+            announcement = form.save(commit=False)
+            announcement.user = current_user
+            announcement.save()
+        return redirect('index')
+        
+    else:
+        form = AnnouncementForm()
+    return render(request, 'announcement.html', {"form":form, "current_user":current_user})
 
 def search_results(request):
 
