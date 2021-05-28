@@ -6,6 +6,7 @@
 <style>
   * {
     max-width: 100%;
+    max-height: 100%;
   }
 
   .hovereffect {
@@ -359,9 +360,55 @@
   .bottom center span {
     color: #fff;
   }
+  .scroll-top {
+  width: 5%;
+  height: 10%;
+  position:fixed;
+  bottom: 5px;
+  left: 95%;
+  background-color: #fff;
+  border: 1px solid #0b6ab8;
+  
+  
+  
+  display: none;
+}
+.scroll-top:hover{
+  background-color: #fff;
+}
+.scroll-top i {
+  display: inline-block;
+  color: #474787 ;
+  
+}
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      offset: 120,
+      easing: 'ease-in-out'
+    })
+    $(document).ready(function () {
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+      $('.scroll-top').fadeIn();
+    } else {
+      $('.scroll-top').fadeOut();
+    }
+  });
 
+  $('.scroll-top').click(function () {
+    $("html, body").animate({
+      scrollTop: 0
+    }, 100);
+      return false;
+  });
 
+});
+
+  </script>
 
 <div class="view container-fluid">
   <div class="header" style="height: 100vh; font-family: 'Vollkorn', serif;">
@@ -373,12 +420,12 @@
         <div class="col-md-4"></div>
 
       </div>
-      <div style="text-align:center; font-size: 70px; padding-top:15%; letter-spacing: 1px;">
-        <p style="font-family: 'Carter One', cursive;" class="blog"><a style='color:white; font-size: 70%;'>Welcome To
-            Calvary Ministries</a></p>
+      <div style="text-align:center; font-size: 70px; padding-top:15%; letter-spacing: 1px;" data-aos="fade-up" data-aos-duration="5000" data-aos-delay="800">
+        <p style="font-family: 'Carter One', cursive; color:white; font-size: 70%;" class="blog" data-aos="zoom-in-up">Welcome To
+            Calvary Ministries</p>
       </div>
       <div style="text-align:center; font-size: 20px;">
-        <button style=" border-radius: 5em; border:none; padding: 10px; background-color:#474787;"><a
+        <button data-aos="fade-up" style=" border-radius: 5em; border:none; padding: 10px; background-color:#474787;"><a
             style="color: white; font-weight:bold;text-decoration:none;" href="{% url 'sermons' %}">View
             Sermons</a></button>
       </div>
@@ -389,24 +436,21 @@
   </div>
 </div>
 <div class="venue-gray-bg"></div>
-<div class="jumbotron " style="background-size:cover ; width: 100%; height: 100%;">
+<div class="jumbotron " style="max-width: 100%;">
   <div class="row">
-    <div class="col-md-6" style="flex: 0 0 50%; max-width: 50%;position: relative;
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;">
+    <div  class="col-md-6" style="inline-size: 0 0 50%; position: relative; width: 100%;">
       <img class="img-fluid main-venue-image"
-        src="https://go2cornerstone.com/wp-content/uploads/2021/03/Onsite-1024x683.jpg">
-      <div class="gray-box position-relative md-main-venue-content" style="margin-top: -5%;">
+        src="https://go2cornerstone.com/wp-content/uploads/2021/03/Onsite-1024x683.jpg" data-aos="zoom-in" data-aos-duration="7000" data-aos-delay="500" style="max-width: 100%;">
+      <div class="gray-box position-relative md-main-venue-content" style="margin-top: -5%;" data-aos="fade-left" data-aos-duration="15000" data-aos-delay="500">
         <h4 class="inside-boxes d-inline-block terracota-box venue-name" style="letter-spacing: 2px;
       padding: 10px 16px;
       text-transform: uppercase;background-color:#474787;
       color: #fff;margin-top: -1.375em;
       margin-right: 1em;">Onsite Services</h4>
         <div class="venue-description" style="white-space: pre-wrap;
-      padding: 1em 2.25em 2.325em 2.25em;
+      padding: 2em 2.25em 2.325em 2.25em;
       font-size: 1.1em;
-      max-width: 600px;
+      max-width: 100%;
       box-sizing: border-box;background-color:#474787; color: white;
       margin-top: -5%;
       "> Sundays
@@ -421,7 +465,7 @@
       </div>
 
     </div>
-    <div class="col-md-6" style="margin-top: -6.7%;">
+    <div class="col-md-6" style="margin-top: -6.7%; max-width: 100%;" data-aos="fade-left" data-aos-duration="9000" data-aos-delay="900">
       <div style="height:40px;">
         <!--padding to make up for removal of weekend services -->
       </div>
@@ -430,7 +474,7 @@
           SERVICES</h3>
       </div> -->
       <img class="img-fluid mt-5 md-secondary-venue-image" src="https://i.postimg.cc/CM4fn1sK/party-Church.jpg"
-        style="height: 48%;">
+        style="height: 48%; max-width: 100%;">
       <div class="gray-box position-relative md-secondary-venue-content" style="margin-top: -14%; ">
         <h4 class="inside-boxes d-inline-block terracota-box venue-name" style="letter-spacing: 2px;
       padding: 10px 16px;
@@ -440,7 +484,7 @@
           margin-right: 1em;">Online Services</h4>
 
         <div class="venue-description" style="white-space: pre-wrap;
-      padding: 1em 2.25em 2.325em 2.25em;
+      /* padding: 1em 2.25em 2.325em 2.25em; */
       font-size: 1.1em;
       max-width: 600px;
       
@@ -464,15 +508,15 @@
   </div>
 </div>
 <div class="jumbotron"
-  style="background-image: url('https://i.postimg.cc/8cWLSBnv/grey-removebg-preview.png'); background-repeat: no-repeat; background-size: cover; width: 100%; height: 100%; margin-top: -100px;">
+  style="background-image: url('https://i.postimg.cc/8cWLSBnv/grey-removebg-preview.png'); background-repeat: no-repeat; background-size: cover; width: 100%; height: 100%; margin-top: -20%; max-width: 100%; min-width: 100%;">
   <h1 style="text-align: center; color:#474787;">Sunday School</h1>
   <div class="container" style="margin-top: 50px;">
     <div class="row">
       <div class="col-md-6">
-        <img src="https://i.postimg.cc/d0Dr5YvD/forkids.png">
+        <img src="https://i.postimg.cc/d0Dr5YvD/forkids.png" data-aos="zoom-in-right" data-aos-duration="500" data-aos-delay="800">
 
       </div>
-      <div class="col-md-6" data-aos="fade-up">
+      <div class="col-md-6" data-aos="fade-left" data-aos-duration="5000" data-aos-delay="1000">
         <p style=" font-size: 1.0em;">Sunday School is the best time meet up with kids and we get to share with them
           word of God.
           Kids get enought time to learn how to priotilize the word of God in their lives as they grow up
@@ -493,7 +537,7 @@
 </div>
 <div class="jumbotron">
   <div class="container-fluid" id="theCards">
-    <div class="col-lg-6 col-lg-offset-0 col-md-6 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-12">
+    <div data-aos="fade-right" data-aos-duration="5000" data-aos-delay="1200" class="col-lg-6 col-lg-offset-0 col-md-6 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-12">
       <figure>
         <div class="media" style="background-image: url(https://i.postimg.cc/2ynqT7m9/focus.png)"></div>
         <figcaption>
@@ -520,7 +564,7 @@
         </figcaption><a href="#"></a>
       </figure>
     </div>
-    <div class="col-lg-6">
+    <div class="col-lg-6" data-aos="fade-left" data-aos-duration="17000" data-aos-delay="1500">
       <figure>
         <div class="media" style="background-image: url(https://i.postimg.cc/y6PqwSdw/senga.png)"></div>
         <figcaption>
@@ -582,7 +626,7 @@
   </div>
 </div> -->
 <div class="jumbtron">
-  <div id="mainverse_container" style="margin-left: 20%; margin-right: 20%; text-align: center;">
+  <div id="mainverse_container" style="margin-left: 20%; margin-top: -3%; margin-right: 20%; text-align: center;" data-aos="zoom-in" data-aos-duration="7000" data-aos-delay="1800">
     <div id="mainverse">
       <p id="verse"></p>
       <span id="verse_reference"></span>
@@ -643,15 +687,28 @@
   </div>
 
 </div>
-<footer class="footer">
-  <div class="container">
+<button class="btn btn-primary scroll-top" data-scroll="up" type="button">
+  <i class="fa fa-chevron-up"></i>
+  </button>
+<!-- <script src="https://cndjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration:1000,
+    offset:120,
+    easing:'ease-in-out'
+  })
+</script> -->
+{% include 'footer.html' %} 
+
+<!-- <footer class="footer"> -->
+  <!-- <div class="container">
     <div class="row">
       <div class="footer-col">
         <h4>church</h4>
         <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Sermons</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'bookwedding' %}">Services</a></li>
+          <li><a href="{% url 'sermons' %}">Sermons</a></li>
 
         </ul>
       </div>
@@ -668,10 +725,10 @@
       <div class="footer-col">
         <h4>Calvary Ministries</h4>
         <ul>
-          <li><a href="#">watch</a></li>
-          <li><a href="#">Give</a></li>
+          <li><a href="{% url 'watch' %}">watch</a></li>
+          <li><a href="{% url 'give' %}">Give</a></li>
           <li><a href="#">Baptism</a></li>
-          <li><a href="#">Weddings</a></li>
+          <li><a href="{% url 'bookwedding' %}">Weddings</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -683,17 +740,18 @@
           <a href="#"><i class="fab fa-linkedin-in"></i></a>
           <h4 style="margin-top: 10px;">Contact Us</h4>
           <div class="content">
-            <form action="#">
+            <form action="" method="POST">
+              {% csrf_token %}
               <div class="email">
                 <div class="text" style="color: white;">Email *</div>
-                <input type="email" required>
+                <input type="email" name="email" required>
               </div>
               <div class="msg">
                 <div class="text" style="color: white;">Message *</div>
-                <textarea rows="2" cols="25" required></textarea>
+                <textarea rows="2" cols="25" name="message" required></textarea>
               </div>
               <div class="btn">
-                <button type="submit" style="background-color:#474787; color: white;">Send</button>
+                <button type="submit" value="Submit" style="background-color:#474787; color: white;">Send</button>
               </div>
             </form>
           </div>
@@ -707,8 +765,8 @@
       </span>
       <span class="far fa-copyright"></span><span> 2020 All rights reserved.</span>
     </center>
-  </div>
-</footer>
+  </div> -->
+<!-- </footer> -->
 
 
 {%endblock%}

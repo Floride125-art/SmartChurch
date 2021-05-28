@@ -18,6 +18,10 @@ def index(request):
     projects = Project.objects.all().order_by('-date_posted')
     return render(request, 'index.html',{'projects':projects})
 
+def footer(request):
+    projects = Project.objects.all().order_by('-date_posted')
+    return render(request, 'footer.html',{'projects':projects})
+
 
 def bookwedding(request):
     projects = Project.objects.all().order_by('-date_posted')
@@ -48,6 +52,17 @@ def success(request):
 def allUsers(request):
     projects = Project.objects.all().order_by('-date_posted')
     return render(request, 'allUsers.html',{'projects':projects})
+def contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('success')
+        else:
+            form = ContactForm()
+            context = {'form': form}
+            return render(request, 'footer.html', context)
+
 
 # def get_context_data(self, **kwargs):
 #         context = super().get_context_data(**kwargs)
@@ -58,6 +73,7 @@ def allUsers(request):
 def register(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
+        print(form.errors)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
