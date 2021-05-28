@@ -123,7 +123,58 @@
   .bottom center span {
     color: #fff;
   }
+  .scroll-top {
+  width: 5%;
+  height: 10%;
+  position:fixed;
+  bottom: 5px;
+  left: 95%;
+  background-color: #fff;
+  border: 1px solid #0b6ab8;
+  
+  
+  
+  display: none;
+}
+.scroll-top:hover{
+  background-color: #fff;
+}
+.scroll-top i {
+  display: inline-block;
+  color: #474787 ;
+  
+}
+
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      offset: 120,
+      easing: 'ease-in-out'
+    })
+    $(document).ready(function () {
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+      $('.scroll-top').fadeIn();
+    } else {
+      $('.scroll-top').fadeOut();
+    }
+  });
+
+  $('.scroll-top').click(function () {
+    $("html, body").animate({
+      scrollTop: 0
+    }, 100);
+      return false;
+  });
+
+});
+
+  </script>
+
+
 
 <div class="view container-fluid">
   <div class="header" style="height: 100vh;">
@@ -133,7 +184,7 @@
         <div class="col-md-4"></div>
 
       </div>
-      <div class="container text-center" id="donText">
+      <div class="container text-center" id="donText" data-aos="zoom-in-up" data-aos-duration="4000" data-aos-delay="600">
         <h1 class="hero-title">Donation</h1>
         <p class="pt-1 hero-description" style="color: #ffffff;">2 Corinthians 9:6-8 NIV
           Remember this: Whoever sows sparingly will also reap sparingly, and whoever sows
@@ -156,9 +207,9 @@
             var x = getpaidSetup({
               PBFPubKey: publicKey,
               customer_email: "user@example.com",
-              amount: 2,
+              amount: 100,
               customer_phone: "234099940409",
-              currency: "USD",
+              currency: "RWF",
               txref: "rave-123456",
               custom_title: "Wildlife Park",
               onclose: function () { },
@@ -189,8 +240,8 @@
   </div>
 </div>
 <div class="jumbotron">
-  <div class="container" id="content">
-    <div class="row">
+  <div class="container" id="content" >
+    <div class="row" >
       <!-- <div class="col-md-4">
                 <di class="mail">
                 <i class="fas fa-envelope" style="font-size: 420%; margin-bottom: 10px;"></i>
@@ -201,7 +252,7 @@
                             class="fa fa-arrow-right" style="color: #e67e22;"></i></a></p>
 
             </div> -->
-      <div class="col-md-6">
+      <div class="col-md-6" data-aos="fade-right" data-aos-duration="6000" data-aos-delay="1000">
         <i class="fas fa-mobile-alt" style="font-size: 420%; margin-bottom: 10px;"></i>
         <h2 class="text-terracota text-uppercase" style="color: #474787;">Mobile Money</h2>
         <p>You may want to donate using Mobile money as it is an easiest way to transfer money
@@ -212,7 +263,7 @@
 
 
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6" data-aos="fade-left" data-aos-duration="7000" data-aos-delay="1200">
         <i class="far fa-credit-card" style="font-size: 420%; margin-bottom: 10px;"></i>
         <h2 class="text-terracota text-uppercase" style="color: #474787;">Online</h2>
         <p>Give using credit card is also another good way you may use donating beacuse this method.
@@ -225,15 +276,18 @@
     </div>
   </div>
 </div>
+<button class="btn btn-primary scroll-top" data-scroll="up" type="button">
+  <i class="fa fa-chevron-up"></i>
+  </button> 
 <footer class="footer">
   <div class="container">
     <div class="row">
       <div class="footer-col">
         <h4>church</h4>
         <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Sermons</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'bookwedding' %}">Services</a></li>
+          <li><a href="{% url 'sermons' %}">Sermons</a></li>
 
         </ul>
       </div>
@@ -250,10 +304,10 @@
       <div class="footer-col">
         <h4>Calvary Ministries</h4>
         <ul>
-          <li><a href="#">watch</a></li>
-          <li><a href="#">Give</a></li>
+          <li><a href="{% url 'watch' %}">watch</a></li>
+          <li><a href="{% url 'give' %}">Give</a></li>
           <li><a href="#">Baptism</a></li>
-          <li><a href="#">Weddings</a></li>
+          <li><a href="{% url 'bookwedding' %}">Weddings</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -275,7 +329,7 @@
                 <textarea rows="2" cols="25" required></textarea>
               </div>
               <div class="btn">
-                <button type="submit" style="background-color:#474787 ; color: white;">Send</button>
+                <button type="submit" style="background-color:#474787; color: white;">Send</button>
               </div>
             </form>
           </div>
@@ -285,11 +339,11 @@
   </div>
   <div class="bottom">
     <center>
-      <span class="credit">Created By <a href="https://www.codingnepalweb.com">Calvary Ministries</a> | </span>
+      <span class="credit">Created By <a href="{% url 'index' %}" style="color: #ffffff;">Calvary Ministries</a> |
+      </span>
       <span class="far fa-copyright"></span><span> 2020 All rights reserved.</span>
     </center>
   </div>
 </footer>
-
 
 {%endblock%}

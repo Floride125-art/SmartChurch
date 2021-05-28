@@ -403,7 +403,7 @@
         -o-transform: rotate(250deg);
         transform: rotate(250deg);
     }
-    .footer {
+    /* .footer {
     background-color:#474787;
     padding: 20px 0;
   }
@@ -420,9 +420,9 @@
     margin-bottom: 35px;
     font-weight: 500;
     position: relative;
-  }
+  } */
 
-  .footer-col h4::before {
+  /* .footer-col h4::before {
     content: '';
     position: absolute;
     left: 0;
@@ -435,7 +435,7 @@
 
   .footer-col ul li:not(:last-child) {
     margin-bottom: 10px;
-  }
+  } */
 
   .footer-col ul li a {
     font-size: 16px;
@@ -447,13 +447,13 @@
     display: block;
     transition: all 0.3s ease;
   }
-
+/* 
   .footer-col ul li a:hover {
     color: #ffffff;
     padding-left: 8px;
-  }
+  } */
 
-  .footer-col .social-links a {
+  /* .footer-col .social-links a {
     display: inline-block;
     height: 40px;
     width: 40px;
@@ -464,22 +464,22 @@
     border-radius: 50%;
     color: #ffffff;
     transition: all 0.5s ease;
-  }
+  } */
 
-  .footer-col .social-links a:hover {
+  /* .footer-col .social-links a:hover {
     color: #24262b;
     background-color: #ffffff;
   }
 
   /*responsive*/
-  @media(max-width: 767px) {
+  /* @media(max-width: 767px) {
     .footer-col {
       width: 50%;
       margin-bottom: 30px;
     }
-  }
+  } */
 
-  @media(max-width: 574px) {
+  /* @media(max-width: 574px) {
     .footer-col {
       width: 100%;
     }
@@ -490,9 +490,9 @@
     margin-top: 20px;
     margin-bottom: -10px;
 
-  }
+  }  */
 
-  .bottom center a {
+  /* .bottom center a {
     color: #ffffff;
     text-decoration: none;
     
@@ -504,20 +504,70 @@
 
   .bottom center span {
     color: #fff;
-  }
+  } */
+  .scroll-top {
+  width: 5%;
+  height: 10%;
+  position:fixed;
+  bottom: 5px;
+  left: 95%;
+  background-color: #fff;
+  border: 1px solid #0b6ab8;
+  
+  
+  
+  display: none;
+}
+.scroll-top:hover{
+  background-color: #fff;
+}
+.scroll-top i {
+  display: inline-block;
+  color: #474787 ;
+  
+}
 
 
 
 
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      offset: 120,
+      easing: 'ease-in-out'
+    })
+    $(document).ready(function () {
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+      $('.scroll-top').fadeIn();
+    } else {
+      $('.scroll-top').fadeOut();
+    }
+  });
+
+  $('.scroll-top').click(function () {
+    $("html, body").animate({
+      scrollTop: 0
+    }, 100);
+      return false;
+  });
+
+});
+
+  </script>
+
+
 </head>
 
 <section class="container-fluid homefirstcont pt-5 " id="homefirstcont">
     <div class="row  justify-content-between align-items-center">
         <div class="col-12 col-sm-4  text-center one">
-            <img src="../../media/images/olsunrespect.png" class="img-responsive img-fluid">
+            <img src="../../media/images/olsunrespect.png" class="img-responsive img-fluid" data-aos="zoom-in-up" data-aos-duration="5000" data-aos-delay="800">
         </div>
-        <div class="col-12 col-sm-8 bg-white py-4 two">
+        <div class="col-12 col-sm-8 bg-white py-4 two" data-aos="fade-left" data-aos-duration="6000" data-aos-delay="1000">
             <h1 class="second" style="color: #474787;">Mission</h1>
             <p class="third">Our Mission is To fulfill the commission that Jesus Christ gave to His followers to go into
                 the world and make disciples of all people. Our purpose is to save the lost and to build up and
@@ -536,14 +586,14 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-10">
                             <div class="section-title text-left pb-10">
-                                <h3 class="title" style="color: #474787;">More About Us</h3>
+                                <h3 class="title" style="color: #474787; text-align: center; margin-top: 5%; margin-bottom: 5%; margin-left: 5%;">More About Us</h3>
                             </div> <!-- section title -->
                         </div>
                     </div> <!-- row -->
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center" >
                         <div class="col-10 col-md-6 col-lg-4">
                             <div class="single-services text-center mt-30 " data-wow-duration="1s"
-                                data-wow-delay="0.2s">
+                                data-wow-delay="0.2s" data-aos="fade-right" data-aos-duration="9000" data-aos-delay="1400">
                                 <div class="services-icon">
                                     <img src="../../media/images/jesus.jpg" alt="shape">
 
@@ -556,14 +606,14 @@
                                 </div>
                             </div> <!-- single services -->
                         </div>
-                        <div class="col-10 col-md-6 col-lg-4">
+                        <div class="col-10 col-md-6 col-lg-4" data-aos="fade-left" data-aos-duration="8000" data-aos-delay="1200">
                             <div class="single-services text-center mt-30 " data-wow-duration="1s"
                                 data-wow-delay="0.5s">
                                 <div class="services-icon">
                                     <img src="../../media/images/salvation.jpg" alt="shape">
 
                                 </div>
-                                <div class="services-content mt-30">
+                                <div class="services-content mt-30" >
                                     <h4 class="services-title" style="color: #474787;">SALVATION</h4>
                                     <p class="text">We believe all are born with a sinful nature and that the work of
                                         Christ’s atonement at the Cross was to redeem us from the power of sin. We
@@ -576,7 +626,7 @@
                         </div>
                         <div class="col-10 col-md-6 col-lg-4">
                             <div class="single-services text-center mt-30 " data-wow-duration="1s"
-                                data-wow-delay="0.8s">
+                                data-wow-delay="0.8s" data-aos="fade-left" data-aos-duration="10000" data-aos-delay="1600">
                                 <div class="services-icon">
                                     <img src="../../media/images/holyspirit.jpg" alt="shape">
 
@@ -608,42 +658,42 @@
                                 <div class="nl-img">
                                     <img src="../../media/images/blog-1.jpg" />
                                 </div>
-                                <div class="nl-title">
-                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                <div class="nl-title" data-aos="fade-up" data-aos-duration="10000" data-aos-delay="1600">
+                                    <a href="">Next Sunday Blessed Choir will lead the whole service</a>
                                 </div>
                             </div>
                             <div class="mt-sm-1 mt-md-4 nl-item">
                                 <div class="nl-img">
                                     <img src="../../media/images/blog-1.jpg" />
                                 </div>
-                                <div class="nl-title">
-                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                <div class="nl-title" data-aos="fade-up" data-aos-duration="12000" data-aos-delay="1700">
+                                    <a href="">Those who registered for baptism have to check their list</a>
                                 </div>
                             </div>
                             <div class="mt-sm-1 mt-md-4 nl-item">
                                 <div class="nl-img">
                                     <img src="../../media/images/blog-1.jpg" />
                                 </div>
-                                <div class="nl-title">
-                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                <div class="nl-title" data-aos="fade-up" data-aos-duration="13000" data-aos-delay="1800">
+                                    <a href="">Remember to register to attend the service using app</a>
                                 </div>
                             </div>
                             <div class="mt-sm-1 mt-md-4 nl-item">
                                 <div class="nl-img">
                                     <img src="../../media/images/blog-1.jpg" />
                                 </div>
-                                <div class="nl-title">
-                                    <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                <div class="nl-title" data-aos="fade-up" data-aos-duration="14000" data-aos-delay="1900">
+                                    <a href="">Thank you to the choir that took us through today's sunday</a>
                                 </div>
                             </div>
-                            <div class="mt-sm-1 mt-md-4 nl-item">
+                            <!-- <div class="mt-sm-1 mt-md-4 nl-item">
                                 <div class="nl-img">
                                     <img src="../../media/images/blog-1.jpg" />
                                 </div>
                                 <div class="nl-title">
                                     <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -658,7 +708,7 @@
     <div class="container-fluid" style="padding-top: 15%; background-color: rgb(250, 250, 250);">
 
         <div class="row justify-content-center">
-            <div class="col-10 col-sm-6 col-md-4">
+            <div class="col-10 col-sm-6 col-md-4" data-aos="fade-right" data-aos-duration="8000" data-aos-delay="900">
                 <div class="single-services text-center mt-30 " data-wow-duration="1s" data-wow-delay="0.2s">
                     <div class="services-icon">
                         <img src="../../media/images/evangil.jpg" alt="shape">
@@ -673,7 +723,7 @@
                     </div>
                 </div> <!-- single services -->
             </div>
-            <div class="col-10 col-sm-6 col-md-4">
+            <div class="col-10 col-sm-6 col-md-4" data-aos="fade-left" data-aos-duration="9000" data-aos-delay="1000">
                 <div class="single-services text-center mt-30" data-wow-duration="1s" data-wow-delay="0.5s">
                     <div class="services-icon">
                         <img src="../../media/images/stepw.jpg" alt="shape">
@@ -691,12 +741,12 @@
                 </div> <!-- single services -->
             </div>
             <div class="col-10 col-sm-6 col-md-4">
-                <div class="single-services text-center mt-30 " data-wow-duration="1s" data-wow-delay="0.8s">
+                <div class="single-services text-center mt-30 " data-wow-duration="1s" data-wow-delay="0.8s" data-aos="fade-right" data-aos-duration="9000" data-aos-delay="1000">
                     <div class="services-icon">
                         <img src="../../media/images/church.jpg" alt="shape">
 
                     </div>
-                    <div class="services-content mt-30">
+                    <div class="services-content mt-30" >
                         <h4 class="services-title" style="color: #474787;">THE CHURCH</h4>
                         <p class="text">We believe in the Church as the eternal and universal Body of Christ consisting
                             of all those who have accepted the work of Christ’s atonement. We believe in the need for a
@@ -711,7 +761,7 @@
             </div>
 
             <div class="col-10 col-sm-6 col-md-4">
-                <div class="single-services text-center mt-30 " data-wow-duration="1s" data-wow-delay="0.2s">
+                <div class="single-services text-center mt-30 " data-wow-duration="1s" data-wow-delay="0.2s" data-aos="fade-right" data-aos-duration="8000" data-aos-delay="900">
                     <div class="services-icon">
                         <img src="../../media/images/scripture.jpg" alt="shape">
 
@@ -729,7 +779,7 @@
                 </div> <!-- single services -->
             </div>
             <div class="col-10 col-sm-6 col-md-4">
-                <div class="single-services text-center mt-30 " data-wow-duration="1s" data-wow-delay="0.5s">
+                <div class="single-services text-center mt-30 " data-wow-duration="1s" data-wow-delay="0.5s" data-aos="fade-right" data-aos-duration="9000" data-aos-delay="1000">
                     <div class="services-icon">
                         <img src="../../media/images/prayers.jpg" alt="shape">
 
@@ -747,7 +797,7 @@
                 </div> <!-- single services -->
             </div>
             <div class="col-10 col-sm-6 col-md-4">
-                <div class="single-services text-center mt-30 " data-wow-duration="1s" data-wow-delay="0.8s">
+                <div class="single-services text-center mt-30 " data-wow-duration="1s" data-wow-delay="0.8s" data-aos="fade-left" data-aos-duration="9000" data-aos-delay="1000">
                     <div class="services-icon">
                         <img src="../../media/images/baptize.jpg" alt="shape">
 
@@ -767,72 +817,12 @@
 
         </div> <!-- row -->
     </div> <!-- container -->
-    <footer class="footer">
-        <div class="container">
-          <div class="row">
-            <div class="footer-col">
-              <h4>church</h4>
-              <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Sermons</a></li>
-               
-              </ul>
-            </div>
-            <div class="footer-col">
-              <h4>Get Connected</h4>
-              <ul>
-                <li><a href="#">Watsapp group</a></li>
-                <li><a href="#">Prayers group</a></li>
-                <li><a href="#">Choir Group</a></li>
-                <li><a href="#">Worship group</a></li>
-                
-              </ul>
-            </div>
-            <div class="footer-col">
-              <h4>Calvary Ministries</h4>
-              <ul>
-                <li><a href="#">watch</a></li>
-                <li><a href="#">Give</a></li>
-                <li><a href="#">Baptism</a></li>
-                <li><a href="#">Weddings</a></li>
-              </ul>
-            </div>
-            <div class="footer-col">
-              <h4>follow us</h4>
-              <div class="social-links">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <h4 style="margin-top: 10px;">Contact Us</h4>
-                <div class="content">
-                  <form action="#">
-                    <div class="email">
-                      <div class="text" style="color: white;">Email *</div>
-                      <input type="email" required>
-                    </div>
-                    <div class="msg">
-                      <div class="text" style="color: white;">Message *</div>
-                      <textarea rows="2" cols="25" required></textarea>
-                    </div>
-                    <div class="btn" >
-                      <button type="submit" style="background-color:#474787 ; color: white;">Send</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="bottom">
-          <center>
-            <span class="credit">Created By <a href="https://www.codingnepalweb.com">Calvary Ministries</a> | </span>
-            <span class="far fa-copyright"></span><span> 2020 All rights reserved.</span>
-          </center>
-        </div>
-      </footer>
-      
+   
+    <button class="btn btn-primary scroll-top" data-scroll="up" type="button">
+        <i class="fa fa-chevron-up"></i>
+        </button>   
 </section>
+
+{% include 'footer.html' %} 
 
 {%endblock%}

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Profile,Project
+from .models import Profile,Project, Contact
 from django.contrib import admin
 from embed_video.admin import AdminVideoMixin
 from .models import Item
@@ -13,3 +13,5 @@ admin.site.register(Item, MyModelAdmin)
 admin.site.register(Profile)
 admin.site.register(Project)
 admin.site.register(Announcements)
+admin.site.register(Contact)
+

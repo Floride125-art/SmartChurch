@@ -30,7 +30,7 @@ font-size: 62.5%;
 } */
 
 
-.container .heading{
+ .heading{
 font-size: 3rem;
 margin: 2rem 0;
 text-transform: capitalize;
@@ -42,7 +42,7 @@ text-shadow: 0 .3rem .5rem rgba(0,0,0,.5);
 
 }
 
-.video-container{
+.col-md-4{
 display:flex;
 justify-content: center;
 flex-wrap: wrap;
@@ -50,7 +50,7 @@ flex-wrap: wrap;
 
 }
 
-.video-container .video{
+.col-md-4 .video{
 
 height:15rem;
 width: 25rem;
@@ -60,7 +60,7 @@ overflow: hidden;
 border-radius: 1rem;
 }
 
-.video-container .video video{
+.col-md-4 .video video{
 
 height: 100%;
 width: 100%;
@@ -70,7 +70,7 @@ border: none;
 cursor: pointer;
 }
 
-.small-img-row p{
+.col-md-4 p{
     margin-left: 20px;
     color: #707070;
     line-height: 22px;
@@ -89,7 +89,7 @@ transform: scale(1.3);
 }
 
 
-.video-container .video .active{
+.col-md-4 .video .active{
 position: fixed;
 top:50%; left: 50%;
 transform: translate(-50%, -50%);
@@ -100,7 +100,7 @@ z-index: 1;
 }
 
 
-.video-container .video .active:hover{
+.col-md-4 .video .active:hover{
 
 transition:none;
 transform: translate(-50%, -50%);
@@ -207,6 +207,17 @@ transform: translate(-50%, -50%);
   .bottom center span {
     color: #fff;
   }
+  .view {
+    min-height: 100%;
+    background: linear-gradient(rgba(1, 9, 26, 0.5), rgba(1, 9, 26, 0.5)), url('https://i.postimg.cc/tT1FjRGK/yesu.png');
+    background-size: cover;
+    animation: slide 20s infinite;
+    animation-delay: 10s;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    width: 100%;
+    overflow: hidden;
+  }
 
     </style>
 
@@ -214,163 +225,204 @@ transform: translate(-50%, -50%);
 
 <body>
 
-
-    <div class="container">
-
-        <div class="heading" style="color: #e67e22;">videos for surmons
-
+  <div class="view container-fluid">
+    <div class="header" style="height: 100vh; font-family: 'Vollkorn', serif;">
+      <div class="container" style="color:white;">
+        <div class="row" style="padding-top:50px;">
+          <!--<div class="col-md-4" style="font-size: 20px;">
+                    <strong>P</strong>
+                </div>-->
+          <div class="col-md-4"></div>
+  
         </div>
-        <!-- {% for i in obj%}
-        {% video i.video 'small' %}
-        {% endfor %} -->
-
-        <div class="video-container">
-            <div class="small-img-row">
-                <div class="video">
-
-                    <!-- <video></video>  -->
-                    <img src="https://i.postimg.cc/59mDBr8j/jesus.png" alt="church" >
-                </div>
-                <p> sunday: live surmon </p>
-            </div>
-            <div class="small-img-row">
-                <div class="video">
-
-                    <!-- <video src="video2.mp4" muted></video> -->
-                    <img src="https://i.postimg.cc/tRVNyn4b/hands.png">
-                </div>
-                <p> sunday: live surmon </p>
-            </div>
-
-            <div class="small-img-row">
-                <div class="video">
-
-                    <!-- <video src="video3.mp4" muted></video> -->
-                    <img src="https://i.postimg.cc/jdH6nVfk/praise.png">
-                </div>
-                <p> sunday: live surmon </p>
-            </div>
-
-            <div class="small-img-row">
-                <div class="video">
-
-                    <!-- <video src="video4.mp4" muted></video> -->
-                    <img src="https://i.postimg.cc/QxJ5xQL2/soma.png">
-                </div>
-                <p> sunday: live surmon </p>
-            </div>
-
-
-            <div class="small-img-row">
-                <div class="video">
-
-                    <!-- <video src="video5.mp4" muted></video> -->
-                    <img src="https://i.postimg.cc/59mDBr8j/jesus.png" alt="church" >
-                </div>
-                <p> sunday: live surmon </p>
-            </div>
-
-
-            <div class="small-img-row">
-                <div class="video">
-<!-- 
-                    <video src="video6.mp4" type="video/mp4" muted></video> -->
-                    <img src="https://i.postimg.cc/tRVNyn4b/hands.png">
-                </div>
-                <p> sunday: live surmon </p>
-            </div>
-
-            <div class="small-img-row">
-                <div class="video">
-
-                    <!-- <video src="video7.mp4" muted></video> -->
-                    <img src="https://i.postimg.cc/jdH6nVfk/praise.png">
-                </div>
-                <p> sunday: live surmon </p>
-            </div>
-
-            <div class="small-img-row">
-                <div class="video">
-
-                    <!-- <video src="video8.mp4" muted></video> -->
-                    <img src="https://i.postimg.cc/QxJ5xQL2/soma.png">
-                </div>
-                <p> sunday: live surmon </p>
-            </div>
-
-
-
-
+        <div style="text-align:center; font-size: 70px; padding-top:15%; letter-spacing: 1px;" data-aos="fade-up" data-aos-duration="5000" data-aos-delay="800">
+          <p style="font-family: 'Carter One', cursive; color:white; font-size: 70%;" class="blog" data-aos="zoom-in-up">The live Sermons videos</p>
         </div>
-
-
+        <div style="text-align:center; font-size: 20px;">
+          <button data-aos="fade-up" style=" border-radius: 5em; border:none; padding: 10px; background-color:#474787;"><a
+              style="color: white; font-weight:bold;text-decoration:none;" href="{% url 'watch' %}">View
+              videos</a></button>
+        </div>
+        <div style="height:230px;">
+  
+        </div>
+      </div>
     </div>
-    <footer class="footer">
+  </div>
+  <div class="heading" style="color: #474787;">Live videos for surmons
+
+  </div>
+    <div class="container">
+      <div class="jumbotron">
         <div class="container">
           <div class="row">
-            <div class="footer-col">
-              <h4>church</h4>
-              <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Sermons</a></li>
-               
-              </ul>
-            </div>
-            <div class="footer-col">
-              <h4>Get Connected</h4>
-              <ul>
-                <li><a href="#">Watsapp group</a></li>
-                <li><a href="#">Prayers group</a></li>
-                <li><a href="#">Choir Group</a></li>
-                <li><a href="#">Worship group</a></li>
+            <div class="col-md-4">
+              
+              <div class="video">
                 
-              </ul>
+
+                <!-- <video></video>  -->
+              <a href="https://www.youtube.com/watch?v=GEQGDJNPIbE"><img src="https://i.postimg.cc/59mDBr8j/jesus.png" alt="church" ></a>
             </div>
-            <div class="footer-col">
-              <h4>Calvary Ministries</h4>
-              <ul>
-                <li><a href="#">watch</a></li>
-                <li><a href="#">Give</a></li>
-                <li><a href="#">Baptism</a></li>
-                <li><a href="#">Weddings</a></li>
-              </ul>
+            <i class="fas fa-play-circle" style="margin-top: -55%; margin-left: 10%; margin-right: 10%; color: #fff; font-size: 350%;"></i>
+            <p> sunday: live surmon </p>
+
             </div>
-            <div class="footer-col">
-              <h4>follow us</h4>
-              <div class="social-links">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <h4 style="margin-top: 10px;">Contact Us</h4>
-                <div class="content">
-                  <form action="#">
-                    <div class="email">
-                      <div class="text" style="color: white;">Email *</div>
-                      <input type="email" required>
-                    </div>
-                    <div class="msg">
-                      <div class="text" style="color: white;">Message *</div>
-                      <textarea rows="2" cols="25" required></textarea>
-                    </div>
-                    <div class="btn" >
-                      <button type="submit" style="background-color:#474787 ; color: white;">Send</button>
-                    </div>
-                  </form>
-                </div>
+            <div class="col-md-4">
+              <div class="video">
+
+                <!-- <video></video>  -->
+                <a href="https://www.youtube.com/watch?v=GEQGDJNPIbE"><img src="https://i.postimg.cc/QxJ5xQL2/soma.png" alt="church" ></a>
+            </div>
+            <i class="fas fa-play-circle" style="margin-top: -55%; margin-left: 10%; margin-right: 10%; color: #fff; font-size: 350%;"></i>
+            <p> sunday: live surmon </p>
+            </div>
+            <div class="col-md-4">
+              <div class="video">
+
+                <!-- <video></video>  -->
+               <a href="https://www.youtube.com/watch?v=GEQGDJNPIbE"><img src="https://i.postimg.cc/jdH6nVfk/praise.png" alt="church" ></a> 
+            </div>
+            <i class="fas fa-play-circle" style="margin-top: -55%; margin-left: 10%; margin-right: 10%; color: #fff; font-size: 350%;"></i>
+            <p> sunday: live surmon </p>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="video">
+
+                <!-- <video></video>  -->
+                <a href="https://www.youtube.com/watch?v=GEQGDJNPIbE"><img src="https://i.postimg.cc/jdH6nVfk/praise.png" alt="church" ></a>
+            </div>
+            <i class="fas fa-play-circle" style="margin-top: -55%; margin-left: 10%; margin-right: 10%; color: #fff; font-size: 350%;"></i>
+           
+            <p> sunday: live surmon </p>
+
+            </div>
+            <div class="col-md-4">
+              <div class="video">
+
+                <!-- <video></video>  -->
+               <a href="https://www.youtube.com/watch?v=GEQGDJNPIbE"><img src="https://i.postimg.cc/QxJ5xQL2/soma.png" alt="church" ></a>
+            </div>
+            <i class="fas fa-play-circle" style="margin-top: -55%; margin-left: 10%; margin-right: 10%; color: #fff; font-size: 350%;"></i>
+            <p> sunday: live surmon </p>
+            </div>
+            <div class="col-md-4">
+              <div class="video">
+
+                <!-- <video></video>  -->
+                <a href="https://www.youtube.com/watch?v=GEQGDJNPIbE"><img src="https://i.postimg.cc/QxJ5xQL2/soma.png" alt="church" ></a>
+            </div>
+            <i class="fas fa-play-circle" style="margin-top: -55%; margin-left: 10%; margin-right: 10%; color: #fff; font-size: 350%;"></i>
+            <p> sunday: live surmon </p>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="video">
+
+                <!-- <video></video>  -->
+                <a href="https://www.youtube.com/watch?v=GEQGDJNPIbE"><img src="https://i.postimg.cc/59mDBr8j/jesus.png" alt="church" ></a>
+            </div>
+            <i class="fas fa-play-circle" style="margin-top: -55%; margin-left: 10%; margin-right: 10%; color: #fff; font-size: 350%;"></i>
+            <p> sunday: live surmon </p>
+
+            </div>
+            <div class="col-md-4">
+              <div class="video">
+
+                <!-- <video></video>  -->
+                <a href="https://www.youtube.com/watch?v=GEQGDJNPIbE"><img src="https://i.postimg.cc/jdH6nVfk/praise.png" alt="church" ></a>
+            </div>
+            <i class="fas fa-play-circle" style="margin-top: -55%; margin-left: 10%; margin-right: 10%; color: #fff; font-size: 350%;"></i>
+            <p> sunday: live surmon </p>
+            </div>
+            <div class="col-md-4">
+              <div class="video">
+
+                <!-- <video></video>  -->
+               <a href="https://www.youtube.com/watch?v=GEQGDJNPIbE"><img src="https://i.postimg.cc/tRVNyn4b/hands.png" alt="church" ></a>
+            </div>
+            <i class="fas fa-play-circle" style="margin-top: -55%; margin-left: 10%; margin-right: 10%; color: #fff; font-size: 350%;"></i>
+            <p> sunday: live surmon </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+       
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>church</h4>
+            <ul>
+              <li><a href="{% url 'about' %}">About</a></li>
+              <li><a href="{% url 'bookwedding' %}">Services</a></li>
+              <li><a href="{% url 'sermons' %}">Sermons</a></li>
+    
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Get Connected</h4>
+            <ul>
+              <li><a href="#">Watsapp group</a></li>
+              <li><a href="#">Prayers group</a></li>
+              <li><a href="#">Choir Group</a></li>
+              <li><a href="#">Worship group</a></li>
+    
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Calvary Ministries</h4>
+            <ul>
+              <li><a href="{% url 'watch' %}">watch</a></li>
+              <li><a href="{% url 'give' %}">Give</a></li>
+              <li><a href="#">Baptism</a></li>
+              <li><a href="{% url 'bookwedding' %}">Weddings</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>follow us</h4>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <h4 style="margin-top: 10px;">Contact Us</h4>
+              <div class="content">
+                <form action="#">
+                  <div class="email">
+                    <div class="text" style="color: white;">Email *</div>
+                    <input type="email" required>
+                  </div>
+                  <div class="msg">
+                    <div class="text" style="color: white;">Message *</div>
+                    <textarea rows="2" cols="25" required></textarea>
+                  </div>
+                  <div class="btn">
+                    <button type="submit" style="background-color:#474787; color: white;">Send</button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
         </div>
-        <div class="bottom">
-          <center>
-            <span class="credit">Created By <a href="https://www.codingnepalweb.com">Calvary Ministries</a> | </span>
-            <span class="far fa-copyright"></span><span> 2020 All rights reserved.</span>
-          </center>
-        </div>
-      </footer>
-      
+      </div>
+      <div class="bottom">
+        <center>
+          <span class="credit">Created By <a href="{% url 'index' %}" style="color: #ffffff;">Calvary Ministries</a> |
+          </span>
+          <span class="far fa-copyright"></span><span> 2020 All rights reserved.</span>
+        </center>
+      </div>
+    </footer>
 
 
     <script type="text/javascript">
