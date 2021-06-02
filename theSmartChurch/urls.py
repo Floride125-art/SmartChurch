@@ -24,8 +24,11 @@ urlpatterns = [
     url(r'success', views.success, name='success'), 
     url(r'allUsers', views.allUsers, name='allUsers'), 
     url(r'footer', views.footer, name='footer'), 
-
-
+    url(r'sundaySchool', views.sundaySchool, name='sundaySchool'), 
+    url(r'donateForm', views.donateForm, name='donateForm'),
+    url(r'baptism', views.baptism, name='baptism'),
+    url(r'registerBaptism', views.registerBaptism, name='registerBaptism'),
+    url(r'nav', views.nav, name='nav')
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

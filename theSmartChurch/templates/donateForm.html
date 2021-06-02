@@ -3,6 +3,9 @@
 {% block content %}
 {{block.super}}
 <style>
+  *{
+    max-width: 100%;
+  }
   .view {
     min-height: 60%;
     max-height: 70%;
@@ -144,6 +147,14 @@
   color: #474787 ;
   
 }
+form{
+  background-color: #474787 ; opacity: 0.8;
+  padding: 5%;
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 20%;
+
+}
 
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -186,29 +197,51 @@
       </div>
       <div class="container text-center" id="donText" data-aos="zoom-in-up" data-aos-duration="4000" data-aos-delay="600">
         <h1 class="hero-title">Donation</h1>
-        <p class="pt-1 hero-description" style="color: #ffffff;">2 Corinthians 9:6-8 NIV
+        <p style="color: #ffffff;">Please fill the form below with your details and proceed</p>
+
+        <!-- <p class="pt-1 hero-description" style="color: #ffffff;">2 Corinthians 9:6-8 NIV
           Remember this: Whoever sows sparingly will also reap sparingly, and whoever sows
           generously will also reap generously. Each of you should give what you have decided in
           your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver.
           And God is able to bless you abundantly, so that in all things at
           all times, having all that you need, you will abound in every good work.</p>
         <p class="text-center my-4" style="color: #ffffff;">We believe in the power of generosity, what it does for the
-          individual doing the giving, and for the purpose that the giving supports.</p>
+          individual doing the giving, and for the purpose that the giving supports.</p> -->
         <form>
+            <div class="input-group mb-3">
+                <div class="input-group-append">
+                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                </div>
+                <input type="text" name="customer_email" id="email" placeholder="email..." class="form-control" >
+            </div>
+            <!-- <div class="input-group mb-3">
+                <div class="input-group-append">
+                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                </div>
+                <input type="text" name="customer_phone" id="phone" value="customer_phone" placeholder="customer_phone..." class="form-control">
+            </div> -->
+            <div class="input-group mb-3">
+                <div class="input-group-append">
+                    <span class="input-group-text"><i class="fas fa-money-bill-alt"></i></span>
+                </div>
+                <input type="text" name="amount" id="amount" placeholder="amount..." class="form-control">
+            </div>
+         
           <script src="https://api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
-          <a href="{% url 'donateForm' %}"><button class="btn"
+          <button class="btn"
             style="background-color:#474787 ; color: white; border-radius: 30px; border: 1px solid #ffffff; padding: 10px 30px;"
-            type="button" > Donate </button></a>
+            type="button" onClick="payWithRave()"> Continue </button>
         </form>
-        <!-- <script>
+        <script>
           const publicKey = "FLWPUBK-a1d3f1ad398f06643c168cf1f4830701-X";
 
           function payWithRave() {
             var x = getpaidSetup({
               PBFPubKey: publicKey,
-              customer_email: "user@example.com",
-              amount: 100,
-              customer_phone: "234099940409",
+              customer_email: document.getElementById("email").value,
+
+              amount: document.getElementById("amount").value,
+              customer_phone: "customer_phone",
               currency: "RWF",
               txref: "rave-123456",
               custom_title: "Wildlife Park",
@@ -230,7 +263,7 @@
             });
           }
 
-        </script> -->
+        </script>
 
       </div>
 

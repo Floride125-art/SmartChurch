@@ -355,8 +355,10 @@
                 style='display:block;'>{{project.date_posted|date:"d-F Y"}}</span>
             </small>
             <hr>
-            <div style='font-size:0.7em;'><img src='{{project.user.profile.profile_picture.url}}' width='18px'
-                height='18px' style='border-radius:50%;'> &nbsp;<a href="/profile/{{project.user.profile.id}}"
+            <div style='font-size:0.7em;'>
+              <!-- <img src='{{project.user.profile.profile_picture.url}}' width='18px'
+                height='18px' style='border-radius:50%;'> -->
+                 &nbsp;<a href="/profile/{{project.user.profile.id}}"
                 style='text-decoration: none;'>{{project.user|upper}}</a></div>
           </div>
         </div>

@@ -21,7 +21,21 @@ def index(request):
 def footer(request):
     projects = Project.objects.all().order_by('-date_posted')
     return render(request, 'footer.html',{'projects':projects})
-
+def registerBaptism(request):
+    projects = Project.objects.all().order_by('-date_posted')
+    return render(request, 'registerBaptism.html',{'projects':projects})
+def nav(request):
+    projects = Project.objects.all().order_by('-date_posted')
+    return render(request, 'nav.html',{'projects':projects})
+def baptism(request):
+    projects = Project.objects.all().order_by('-date_posted')
+    return render(request, 'baptism.html',{'projects':projects})
+def donateForm(request):
+    projects = Project.objects.all().order_by('-date_posted')
+    return render(request, 'donateForm.html',{'projects':projects})
+def sundaySchool(request):
+    projects = Project.objects.all().order_by('-date_posted')
+    return render(request, 'sundaySchool.html',{'projects':projects})
 
 def bookwedding(request):
     projects = Project.objects.all().order_by('-date_posted')
