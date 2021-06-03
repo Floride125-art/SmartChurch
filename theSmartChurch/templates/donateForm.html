@@ -3,9 +3,10 @@
 {% block content %}
 {{block.super}}
 <style>
-  *{
+  * {
     max-width: 100%;
   }
+
   .view {
     min-height: 60%;
     max-height: 70%;
@@ -126,64 +127,68 @@
   .bottom center span {
     color: #fff;
   }
+
   .scroll-top {
-  width: 5%;
-  height: 10%;
-  position:fixed;
-  bottom: 5px;
-  left: 95%;
-  background-color: #fff;
-  border: 1px solid #0b6ab8;
-  
-  
-  
-  display: none;
-}
-.scroll-top:hover{
-  background-color: #fff;
-}
-.scroll-top i {
-  display: inline-block;
-  color: #474787 ;
-  
-}
-form{
-  background-color: #474787 ; opacity: 0.8;
-  padding: 5%;
-  width: 70%;
-  margin-left: 15%;
-  margin-right: 20%;
+    width: 5%;
+    height: 10%;
+    position: fixed;
+    bottom: 5px;
+    left: 95%;
+    background-color: #fff;
+    border: 1px solid #0b6ab8;
 
-}
 
+
+    display: none;
+  }
+
+  .scroll-top:hover {
+    background-color: #fff;
+  }
+
+  .scroll-top i {
+    display: inline-block;
+    color: #474787;
+
+  }
+
+  form {
+    background-color: #474787;
+    opacity: 0.8;
+    padding: 5%;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 20%;
+
+  }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      offset: 120,
-      easing: 'ease-in-out'
-    })
-    $(document).ready(function () {
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-      $('.scroll-top').fadeIn();
-    } else {
-      $('.scroll-top').fadeOut();
-    }
-  });
+<script>
+  AOS.init({
+    duration: 1000,
+    offset: 120,
+    easing: 'ease-in-out'
+  })
+  $(document).ready(function () {
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > 100) {
+        $('.scroll-top').fadeIn();
+      } else {
+        $('.scroll-top').fadeOut();
+      }
+    });
 
-  $('.scroll-top').click(function () {
-    $("html, body").animate({
-      scrollTop: 0
-    }, 100);
+    $('.scroll-top').click(function () {
+      $("html, body").animate({
+        scrollTop: 0
+      }, 100);
       return false;
+    });
+
   });
 
-});
-
-  </script>
+</script>
 
 
 
@@ -195,7 +200,8 @@ form{
         <div class="col-md-4"></div>
 
       </div>
-      <div class="container text-center" id="donText" data-aos="zoom-in-up" data-aos-duration="4000" data-aos-delay="600">
+      <div class="container text-center" id="donText" data-aos="zoom-in-up" data-aos-duration="4000"
+        data-aos-delay="600">
         <h1 class="hero-title">Donation</h1>
         <p style="color: #ffffff;">Please fill the form below with your details and proceed</p>
 
@@ -208,52 +214,71 @@ form{
         <p class="text-center my-4" style="color: #ffffff;">We believe in the power of generosity, what it does for the
           individual doing the giving, and for the purpose that the giving supports.</p> -->
         <form>
-            <div class="input-group mb-3">
-                <div class="input-group-append">
-                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                </div>
-                <input type="text" name="customer_email" id="email" placeholder="email..." class="form-control" >
+          <div class="input-group mb-3">
+            <div class="input-group-append">
+              <span class="input-group-text"><i class="fas fa-envelope"></i></span>
             </div>
-            <!-- <div class="input-group mb-3">
-                <div class="input-group-append">
-                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
-                </div>
-                <input type="text" name="customer_phone" id="phone" value="customer_phone" placeholder="customer_phone..." class="form-control">
-            </div> -->
-            <div class="input-group mb-3">
-                <div class="input-group-append">
-                    <span class="input-group-text"><i class="fas fa-money-bill-alt"></i></span>
-                </div>
-                <input type="text" name="amount" id="amount" placeholder="amount..." class="form-control">
+            <input type="text" name="customer_email" id="email" placeholder="email..." class="form-control">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-append">
+              <span class="input-group-text"><i class="fas fa-phone"></i></span>
             </div>
-         
+            <input type="tel" name="customer_phone" id="phone" value="" placeholder="customer_phone..."
+              class="form-control">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-append">
+              <span class="input-group-text"><i class="fas fa-money-bill-alt"></i></span>
+            </div>
+            <input type="text" name="amount" id="amount" placeholder="amount..." class="form-control">
+          </div>
+
           <script src="https://api.ravepay.co/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
           <button class="btn"
             style="background-color:#474787 ; color: white; border-radius: 30px; border: 1px solid #ffffff; padding: 10px 30px;"
             type="button" onClick="payWithRave()"> Continue </button>
         </form>
         <script>
-          const publicKey = "FLWPUBK-a1d3f1ad398f06643c168cf1f4830701-X";
-
+          const publicKey = "FLWPUBK_TEST-9193d2f98d417161c23704acbc586ff0-X";
+          const customer_phone = document.getElementById("phone").value;
           function payWithRave() {
             var x = getpaidSetup({
               PBFPubKey: publicKey,
               customer_email: document.getElementById("email").value,
-
+              customer_phone: customer_phone,
               amount: document.getElementById("amount").value,
-              customer_phone: "customer_phone",
               currency: "RWF",
               txref: "rave-123456",
-              custom_title: "Wildlife Park",
+              custom_title: "Calvary Ministries",
               onclose: function () { },
               callback: function (response) {
                 var txref = response.tx.txRef;
-                console.log("This is the response returned after a charge", response);
                 if (
                   response.tx.chargeResponseCode == "00" ||
                   response.tx.chargeResponseCode == "0"
                 ) {
-                  document.location.href = "success.html"
+                  const data = { sender: 'CALVARY', phone: customer_phone, sms: "Thank you for your donation" };
+                  const headers = new Headers();
+                  const proxyurl = "https://cors-anywhere.herokuapp.com/";
+                  const url = 'https://auth-sms.herokuapp.com/Send';
+                  headers.append('Content-Type', 'application/json');
+                  headers.append('Accept', 'application/json');
+                  headers.append('Origin', 'https://auth-sms.herokuapp.com/Send');
+                  fetch(proxyurl+url, {
+                    method: 'POST', // or 'PUT'
+                    headers: headers,
+                    body: JSON.stringify(data)
+                  })
+                    .then(response => response.json())
+                    .then(data => {
+                      console.log('Success:', data);
+                    })
+                    .catch((error) => {
+                      console.error('Error:', error);
+                    });
+
+                    document.location.href = "success.html";
                   // redirect to a success page
                 } else {
                   // redirect to a failure page.
@@ -273,8 +298,8 @@ form{
   </div>
 </div>
 <div class="jumbotron">
-  <div class="container" id="content" >
-    <div class="row" >
+  <div class="container" id="content">
+    <div class="row">
       <!-- <div class="col-md-4">
                 <di class="mail">
                 <i class="fas fa-envelope" style="font-size: 420%; margin-bottom: 10px;"></i>
@@ -311,7 +336,7 @@ form{
 </div>
 <button class="btn btn-primary scroll-top" data-scroll="up" type="button">
   <i class="fa fa-chevron-up"></i>
-  </button> 
+</button>
 <footer class="footer">
   <div class="container">
     <div class="row">
