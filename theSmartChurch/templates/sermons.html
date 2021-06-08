@@ -355,8 +355,10 @@
                 style='display:block;'>{{project.date_posted|date:"d-F Y"}}</span>
             </small>
             <hr>
-            <div style='font-size:0.7em;'><img src='{{project.user.profile.profile_picture.url}}' width='18px'
-                height='18px' style='border-radius:50%;'> &nbsp;<a href="/profile/{{project.user.profile.id}}"
+            <div style='font-size:0.7em;'>
+              <!-- <img src='{{project.user.profile.profile_picture.url}}' width='18px'
+                height='18px' style='border-radius:50%;'> -->
+                 &nbsp;<a href="/profile/{{project.user.profile.id}}"
                 style='text-decoration: none;'>{{project.user|upper}}</a></div>
           </div>
         </div>
@@ -367,15 +369,16 @@
 </div>
 
 </div>
-<footer class="footer">
+{% include 'footer.html' %} 
+<!-- <footer class="footer">
   <div class="container">
     <div class="row">
       <div class="footer-col">
         <h4>church</h4>
         <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Sermons</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'bookwedding' %}">Services</a></li>
+          <li><a href="{% url 'sermons' %}">Sermons</a></li>
 
         </ul>
       </div>
@@ -392,10 +395,10 @@
       <div class="footer-col">
         <h4>Calvary Ministries</h4>
         <ul>
-          <li><a href="#">watch</a></li>
-          <li><a href="#">Give</a></li>
+          <li><a href="{% url 'watch' %}">watch</a></li>
+          <li><a href="{% url 'give' %}">Give</a></li>
           <li><a href="#">Baptism</a></li>
-          <li><a href="#">Weddings</a></li>
+          <li><a href="{% url 'bookwedding' %}">Weddings</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -417,7 +420,7 @@
                 <textarea rows="2" cols="25" required></textarea>
               </div>
               <div class="btn">
-                <button type="submit" style="background-color:#474787 ; color: white;">Send</button>
+                <button type="submit" style="background-color:#474787; color: white;">Send</button>
               </div>
             </form>
           </div>
@@ -427,11 +430,11 @@
   </div>
   <div class="bottom">
     <center>
-      <span class="credit">Created By <a href="https://www.codingnepalweb.com">Calvary Ministries</a> | </span>
+      <span class="credit">Created By <a href="{% url 'index' %}" style="color: #ffffff;">Calvary Ministries</a> |
+      </span>
       <span class="far fa-copyright"></span><span> 2020 All rights reserved.</span>
     </center>
   </div>
-</footer>
-
+</footer> -->
 
 {%endblock%}

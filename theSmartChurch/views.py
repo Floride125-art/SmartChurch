@@ -21,6 +21,24 @@ def index(request):
     projects = Project.objects.all().order_by('-date_posted')
     return render(request, 'index.html',{'projects':projects})
 
+def footer(request):
+    projects = Project.objects.all().order_by('-date_posted')
+    return render(request, 'footer.html',{'projects':projects})
+def registerBaptism(request):
+    projects = Project.objects.all().order_by('-date_posted')
+    return render(request, 'registerBaptism.html',{'projects':projects})
+def nav(request):
+    projects = Project.objects.all().order_by('-date_posted')
+    return render(request, 'nav.html',{'projects':projects})
+def baptism(request):
+    projects = Project.objects.all().order_by('-date_posted')
+    return render(request, 'baptism.html',{'projects':projects})
+def donateForm(request):
+    projects = Project.objects.all().order_by('-date_posted')
+    return render(request, 'donateForm.html',{'projects':projects})
+def sundaySchool(request):
+    projects = Project.objects.all().order_by('-date_posted')
+    return render(request, 'sundaySchool.html',{'projects':projects})
 
 def bookwedding(request):
     projects = Project.objects.all().order_by('-date_posted')
@@ -52,6 +70,17 @@ def success(request):
 def allUsers(request):
     projects = Project.objects.all().order_by('-date_posted')
     return render(request, 'allUsers.html',{'projects':projects})
+def contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('success')
+        else:
+            form = ContactForm()
+            context = {'form': form}
+            return render(request, 'footer.html', context)
+
 
 # def get_context_data(self, **kwargs):
 #         context = super().get_context_data(**kwargs)
@@ -61,6 +90,7 @@ def allUsers(request):
 def register(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
+        print(form.errors)
         if form.is_valid():
             form.save()
 
