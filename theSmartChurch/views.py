@@ -1,8 +1,10 @@
+from django.contrib.auth.forms import UsernameField
+from django.db.models.query_utils import refs_expression
 from django.shortcuts import render,redirect
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
-from .models import Profile,Project
+from .models import Christians, Profile,Project
 from .forms import NewProjectForm,ProfileUpdateForm,RegisterForm, AnnouncementForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -73,7 +75,7 @@ def register(request):
             user = authenticate(username=username, password=password)
             messages.success(request ,"Account was created for "+username)
             login(request, user)
-            return redirect('login')
+            return redirect('index')
     else:
         form = RegisterForm()
     return render(request,'registration/registration_form.html')
@@ -178,3 +180,33 @@ class ProjectList(APIView):
         all_projects =Project.objects.all()
         serializers =ProjectSerializer(all_projects, many=True)
         return Response(serializers.data)
+
+    
+def christiansR(request):
+
+    if request.method == 'POST':
+        firstname= request.POST['first']
+        lastname= request.POST['second']
+        phoneNmber= request.POST['phonenumber']
+        add= request.POST['address']
+        email= request.POST['email']
+      
+        if phoneNmber==phoneNmber:
+
+            if User.objects.filter(email=email).exists():
+                 print('Email already used')
+            else:
+         
+              christians=Christians.objects.create(firstname=firstname,lastname=lastname, phoneNmber=phoneNmber,add=add,email=email)
+              christians.save();
+              print('Successfully')
+        else: 
+         print("the number belongs to another person") 
+        return redirect('/')
+
+
+    else:   
+     return render(request,'christiansR.html')
+
+
+        
