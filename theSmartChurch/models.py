@@ -74,6 +74,7 @@ class Project(models.Model):
     def search(cls,searchterm):
         search = Project.objects.filter(Q(title__icontains=searchterm)|Q(description__icontains=searchterm)|Q(country__icontains=searchterm))
         return search
+        
 class Announcements(models.Model):
     title = models.CharField(max_length=50)
     description = models.CharField(max_length=200)
@@ -95,3 +96,26 @@ class Announcements(models.Model):
     def search(cls,searchterm):
         search = Announcements.objects.filter(Q(title__icontains=searchterm)|Q(description__icontains=searchterm)|Q(country__icontains=searchterm))
         return search
+
+
+class Christians(models.Model):
+    firstname = models.CharField(max_length =30)
+    lastname = models.CharField(max_length =30)
+    phoneNmber=models.CharField(max_length =30)
+    add=models.CharField(max_length =30)
+    email = models.EmailField()
+
+    def __str__(self):
+        return self.firstname
+    class Meta:
+        ordering = ['firstname']
+
+    def save_christian(self):
+        self.save()
+
+    def delete_christian(self):
+        self.delete()
+
+
+
+

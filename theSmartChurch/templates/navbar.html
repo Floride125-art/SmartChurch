@@ -28,6 +28,8 @@ body{
   background:#474787;
   height: 100px;
   width: 100%;
+  font-style: italic;
+  
  
 }
 label.logo{
@@ -135,6 +137,12 @@ nav ul li a{
         <!-- <label class="logo">Calvary</label> -->
         <!-- <ul>
           <li><a class="active"  href="{% url 'index' %}" id="forNav">Home</a></li>
+          <li><a href="{% url 'about' %}" id="forNav">About</a></li>
+          <li><a href="#" id="forNav">Watch</a></li>
+          <li><a href="{% url 'give' %}" id="forNav">Give</a></li>
+          <li><a href="{% url 'christiansR' %}" id="forNav">Register</a></li>
+
+          <li>
           <li><a href="{% url 'nav' %}" id="forNav">About</a></li>
           <li><a href="{% url 'watch' %}" id="forNav">Watch</a></li>
           <li><a href="{% url 'give' %}" id="forNav">Give</a></li>
@@ -401,6 +409,9 @@ a {
                                   <a class="dropdown-item" href="{%url 'my_profile'%}" id="forNav" style="font-size: 1.6rem;
                                   font-weight: 400;
                                   color: #fff;">Profile</a>
+                                   <a href="{% url 'christiansR' %}" id="forNav" style="font-size: 1.6rem;
+                                   font-weight: 400;
+                                   color: #fff;">Christians</a>
                                   <div class="dropdown-divider"></div>
                                   <a class="dropdown-item" href="/logout" id="forNav" style="font-size: 1.6rem;
                                   font-weight: 400;

@@ -23,6 +23,9 @@ urlpatterns = [
     url(r'sermons',views.sermons,name='sermons'), 
     url(r'success', views.success, name='success'), 
     url(r'allUsers', views.allUsers, name='allUsers'), 
+    url(r'christiansR',views.christiansR,name='christiansR'),
+
+
     url(r'footer', views.footer, name='footer'), 
     url(r'sundaySchool', views.sundaySchool, name='sundaySchool'), 
     url(r'donateForm', views.donateForm, name='donateForm'),

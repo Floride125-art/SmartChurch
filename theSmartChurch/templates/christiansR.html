@@ -73,18 +73,29 @@
 		<div class="d-flex justify-content-center h-100">
 			<div class="user_card">
 				<div class="d-flex justify-content-center">
-					<h3 id="form-title">REGISTER ACCOUNT</h3>
+					<h3 id="form-title">REGISTER A CHRISTIAN</h3>
 				</div>
 				<div class="d-flex justify-content-center form_container">
 
-					<form method="POST" action="">
+					<form method="POST" action="christiansR">
 						{%csrf_token%}
 						<div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" name="username">
-							<p class="help is-danger">{{ form.username.errors }}</p>
+							<input type="text" name="first">
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text" name="second">
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-envelope-square"></i></span>
+							</div>
+							<input type="number" name="phonenumber">
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
@@ -92,37 +103,34 @@
 							</div>
 							<input type="email" name="email">
 						</div>
+
+						
 						<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-<<<<<<< HEAD
-							<input type="password" name="password1">
-=======
-							<input type="text" name="password1">
-							<p class="help is-danger">{{ form.password.errors }}</p>
->>>>>>> 35129602335841d58042769ba63b64109a90687d
+							<input type="text" name="address">
 						</div>
-						<div class="input-group mb-2">
+						<!--<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
 							<input type="password" name="password2">
-						</div>
+						</div>-->
 
 				   		<div class="d-flex justify-content-center mt-3 login_container">
-				 			<input class="btn login_btn" type="submit" value="Register Account">
+				 			<input class="btn login_btn" type="submit" value="Register ">
 				   		</div>
 					</form>
 				</div>
 				
 				{{form.errors}}
 		
-				<div class="mt-4">
+				<!--<div class="mt-4">
 					<div class="d-flex justify-content-center links">
 						Already have an account? <a href="/accounts/login" class="ml-2" style="text-decoration: none; color: white;">Login</a>
 					
-					</div>
+					</div>-->
 				</div>
 			</div>
 		</div>
@@ -134,10 +142,13 @@
 
 		//Query All input fields
 		var form_fields = document.getElementsByTagName('input')
-		form_fields[1].placeholder='Username..';
-		form_fields[2].placeholder='Email..';
-		form_fields[3].placeholder='Enter password...';
-		form_fields[4].placeholder='Re-enter Password...';
+		form_fields[1].placeholder='First-name..';
+		form_fields[2].placeholder='Last-Name..';
+		form_fields[3].placeholder='Phone Number..';
+		form_fields[4].placeholder='Email...';
+		form_fields[5].placeholder='Address...';
+
+		//form_fields[4].placeholder='Re-enter Password...';
 
 
 		for (var field in form_fields){	

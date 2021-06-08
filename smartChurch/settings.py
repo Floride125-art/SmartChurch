@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
-import django_heroku
+# import django_heroku
 import dj_database_url
 from decouple import config,Csv
 
@@ -162,6 +162,4 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Configure Django App for Heroku.
-django_heroku.settings(locals())
-RAVE_PUBLIC_KEY = 'FLWPUBK-a1d3f1ad398f06643c168cf1f4830701-X'
-RAVE_SECRET_KEY = 'FLWSECK-a951e6ebd11198eba0c04adaa1e7d858-X'
+# django_heroku.settings(locals())

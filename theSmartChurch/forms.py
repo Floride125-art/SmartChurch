@@ -47,3 +47,8 @@ class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = Profile
         exclude = ['user','email']
+
+#class christiansR(forms.ModelForm) : 
+    #class Meta:
+    # model = christiansR
+       # exclude =[User]      
