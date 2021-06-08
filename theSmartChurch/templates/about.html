@@ -3,6 +3,7 @@
 {% block content %}
 {{block.super}}
 <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
     * {
         box-sizing: border-box;
         margin: 0px;
@@ -26,7 +27,7 @@
         width: 100%;
         height: 100%;
         background-size: 200px 200px;
-        font-family: "Droid Serif", 'Roboto';
+        font-family: 'Roboto', sans-serif;
         background-attachment: fixed, fixed;
         background-position: top left, center center;
         padding: 0;
@@ -42,8 +43,7 @@
 
     .homefirstcont .first {
         font-size: 5vw;
-        font-family: 'Roboto Slab', serif;
-    }
+        font-family: 'Roboto', sans-serif;    }
 
     .homefirstcont .second {
         font-size: 3.6vw;
@@ -60,7 +60,7 @@
 
     .homefirstcont .third::first-letter {
         font-size: 3vw;
-        color: #72200c;
+        color: #474787;
     }
 
     @media (max-width: 575px) {
@@ -811,7 +811,7 @@
                             be baptized in water as a public profession of their faith in Christ. -->
                         </p>
                     </div>
-                    <a href="#" class="btn-primary p-2" style="color: #ffffff; background-color:  #474787;">Get Baptized</a>
+                    <a href="{% url 'baptism' %}" class="btn-primary p-2" style="color: #ffffff; background-color:  #474787;">Get Baptized</a>
                 </div> <!-- single services -->
             </div>
 

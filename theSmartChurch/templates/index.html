@@ -440,7 +440,7 @@
   <div class="row">
     <div  class="col-md-6" style="inline-size: 0 0 50%; position: relative; width: 100%;">
       <img class="img-fluid main-venue-image"
-        src="https://go2cornerstone.com/wp-content/uploads/2021/03/Onsite-1024x683.jpg" data-aos="zoom-in" data-aos-duration="7000" data-aos-delay="500" style="max-width: 100%;">
+        src="https://i.postimg.cc/jdZP0vG9/imana.jpg" data-aos="zoom-in" data-aos-duration="7000" data-aos-delay="500" style="height: auto; width: 100%;">
       <div class="gray-box position-relative md-main-venue-content" style="margin-top: -5%;" data-aos="fade-left" data-aos-duration="15000" data-aos-delay="500">
         <h4 class="inside-boxes d-inline-block terracota-box venue-name" style="letter-spacing: 2px;
       padding: 10px 16px;
@@ -453,9 +453,11 @@
       max-width: 100%;
       box-sizing: border-box;background-color:#474787; color: white;
       margin-top: -5%;
+      text-align: justify;
       "> Sundays
           Main Service
-          9:00, 10:20, and 11:40am in main sanctuary and outside on the patio
+          9:00, 10:20, and 11:40am in main sanctuary 
+          and outside on the patio
           9:00am in small church
 
           <a href="" class="btn"
@@ -473,8 +475,8 @@
         <h3 class="inside-boxes text-center mt-5 d-none d-md-inline-block gray-box">WEEKEND
           SERVICES</h3>
       </div> -->
-      <img class="img-fluid mt-5 md-secondary-venue-image" src="https://i.postimg.cc/CM4fn1sK/party-Church.jpg"
-        style="height: 48%; max-width: 100%;">
+      <img class="img-fluid mt-5 md-secondary-venue-image" src="https://i.postimg.cc/qvFKgqBx/singsme.jpg"
+        style="height: auto; width: 100%; ">
       <div class="gray-box position-relative md-secondary-venue-content" style="margin-top: -14%; ">
         <h4 class="inside-boxes d-inline-block terracota-box venue-name" style="letter-spacing: 2px;
       padding: 10px 16px;
@@ -483,15 +485,16 @@
             /* margin-left: 1em; */
           margin-right: 1em;">Online Services</h4>
 
-        <div class="venue-description" style="white-space: pre-wrap;
-      /* padding: 1em 2.25em 2.325em 2.25em; */
-      font-size: 1.1em;
-      max-width: 600px;
-      
-      box-sizing: border-box;
-      background-color:#474787; 
-      color: white; 
-      margin-top: -4%;">
+        <div class="venue-description"
+        style="white-space: pre-wrap;
+        padding: 2em 2.25em 2.325em 2.25em;
+        font-size: 1.1em;
+        max-width: 100%;
+        box-sizing: border-box;background-color:#474787; color: white;
+        margin-top: -5%;
+        text-align: justify;
+        "
+      >
           Sundays
           9:00, 10:20, and 11:40am
           Join us live during any of our weekend services.
@@ -508,7 +511,7 @@
   </div>
 </div>
 <div class="jumbotron"
-  style="background-image: url('https://i.postimg.cc/8cWLSBnv/grey-removebg-preview.png'); background-repeat: no-repeat; background-size: cover; width: 100%; height: 100%; margin-top: -20%; max-width: 100%; min-width: 100%;">
+  style="background-image: url('https://i.postimg.cc/8cWLSBnv/grey-removebg-preview.png'); background-repeat: no-repeat; background-size: cover; width: 100%; height: 100%; margin-top: -5%; max-width: 100%; min-width: 100%;">
   <h1 style="text-align: center; color:#474787;">Sunday School</h1>
   <div class="container" style="margin-top: 50px;">
     <div class="row">
@@ -516,7 +519,7 @@
         <img src="https://i.postimg.cc/d0Dr5YvD/forkids.png" data-aos="zoom-in-right" data-aos-duration="500" data-aos-delay="800">
 
       </div>
-      <div class="col-md-6" data-aos="fade-left" data-aos-duration="5000" data-aos-delay="1000">
+      <div class="col-md-6" data-aos="fade-left" data-aos-duration="5000" data-aos-delay="1000" style="margin-top: 3%;">
         <p style=" font-size: 1.0em;">Sunday School is the best time meet up with kids and we get to share with them
           word of God.
           Kids get enought time to learn how to priotilize the word of God in their lives as they grow up
@@ -527,8 +530,8 @@
           to learn different versuses from bible and watch video that really explain important of God in their life
         </p>
         <div
-          style="text-decoration: none; background-color:#474787; color: white; border-radius: 20px; width: 130px; padding: 10px;">
-          <a href="#" style="color: white;">Learn More</a>
+          style="text-decoration: none; background-color:#474787; color: white; border-radius: 20px; width: 20%; padding: 2%;">
+          <a href="{% url 'sundaySchool' %}" style="color: white;">Learn More</a>
         </div>
       </div>
     </div>
@@ -585,7 +588,7 @@
           <div class="learned" style=" font-size: 1.0em;">
             <a href="{% url 'about' %}" style="text-decoration: none; color:#474787;">Learn more</a>
           </div>
-        </figcaption><a href="#"></a>
+        </figcaption><a href="{% url 'about' %}"></a>
       </figure>
     </div>
   </div>

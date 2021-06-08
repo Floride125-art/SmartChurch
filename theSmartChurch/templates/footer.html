@@ -148,19 +148,19 @@
               <div class="social-links">
                 <h4 style="margin-top: 10px;">Contact Us</h4>
                 <div class="content">
-                  <form action="" method="POST">
+                  <form action="" method="POST" class="form-group">
                     {% csrf_token %}
                     <div class="email">
                       <div class="text" style="color: white;">Email *</div>
-                      <input type="email" name="email" required>
+                      <input type="email" class="form-control" name="email" required>
                     </div>
                     <div class="msg">
                       <div class="text" style="color: white;">Message *</div>
-                      <textarea rows="2" cols="25" name="message" required></textarea>
+                      <textarea rows="2" class="form-control" cols="20" name="message" required></textarea>
                     </div>
-                    <div class="btn">
-                      <button type="submit" value="Submit" style="background-color:#474787; color: white;">Send</button>
-                    </div>
+                    
+                      <button type="submit" class="btn btn-primary" value="Submit" style="background-color:#ffffff; font-weight: 900; color: #474787; margin-top: 2%;">Send</button>
+                  
                   </form>
                 </div>
                 <h4 style=" margin-bottom: 15px;">follow us</h4>

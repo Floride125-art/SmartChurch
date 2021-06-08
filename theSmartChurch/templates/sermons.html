@@ -355,8 +355,10 @@
                 style='display:block;'>{{project.date_posted|date:"d-F Y"}}</span>
             </small>
             <hr>
-            <div style='font-size:0.7em;'><img src='{{project.user.profile.profile_picture.url}}' width='18px'
-                height='18px' style='border-radius:50%;'> &nbsp;<a href="/profile/{{project.user.profile.id}}"
+            <div style='font-size:0.7em;'>
+              <!-- <img src='{{project.user.profile.profile_picture.url}}' width='18px'
+                height='18px' style='border-radius:50%;'> -->
+                 &nbsp;<a href="/profile/{{project.user.profile.id}}"
                 style='text-decoration: none;'>{{project.user|upper}}</a></div>
           </div>
         </div>
@@ -367,7 +369,8 @@
 </div>
 
 </div>
-<footer class="footer">
+{% include 'footer.html' %} 
+<!-- <footer class="footer">
   <div class="container">
     <div class="row">
       <div class="footer-col">
@@ -432,6 +435,6 @@
       <span class="far fa-copyright"></span><span> 2020 All rights reserved.</span>
     </center>
   </div>
-</footer>
+</footer> -->
 
 {%endblock%}

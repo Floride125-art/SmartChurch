@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -23,8 +23,8 @@
 }
 body{
   font-family: montserrat;
-}
-nav{
+} -->
+<!-- nav{
   background:#474787;
   height: 100px;
   width: 100%;
@@ -116,10 +116,10 @@ nav ul li a{
     left: 0;
   }
  
-}
+} -->
 
 
-    </style>
+    <!-- </style>
 </head>
 
 <body id="mynav">
@@ -131,35 +131,35 @@ nav ul li a{
         <a href="{% url 'index' %}">
         <img src="https://i.postimg.cc/BnbcSwgQ/image-1.png" style=" width: 10%; height: 100%;">
       </a>
-        
+         -->
         <!-- <label class="logo">Calvary</label> -->
-        <ul>
+        <!-- <ul>
           <li><a class="active"  href="{% url 'index' %}" id="forNav">Home</a></li>
-          <li><a href="{% url 'about' %}" id="forNav">About</a></li>
+          <li><a href="{% url 'nav' %}" id="forNav">About</a></li>
           <li><a href="{% url 'watch' %}" id="forNav">Watch</a></li>
           <li><a href="{% url 'give' %}" id="forNav">Give</a></li>
-          <li>
+          <li> -->
             <!-- <div class="col-md-2" >
                 <div class="row" id='profile'>
                    
                     <div class="col-md-8"> -->
                         
-                        <div class="dropdown">
+                        <!-- <div class="dropdown">
                             <a class="btn btn" data-toggle="dropdown" 
                             aria-haspopup="true" aria-expanded="false" style="color: white;"  id="forNav">Services 
                             </a>
                             <div class="dropdown-menu" style="width:200px; background-color:#474787;">
-                                <a class="dropdown-item" href="#" style="color: white;">Baptism</a>
+                                <a class="dropdown-item" href="{% url 'baptism' %}" style="color: white;">Baptism</a>
                                 <div class="dropdown-divider" id="forNav"></div>
                                 <a class="dropdown-item" href="{% url 'bookwedding' %}" id="forNav"  style="color: white;">Weddings</a>
-                            </div>
+                            </div> -->
                         <!-- </div>
                     </div> -->
                   
                    
 
           
-                </div>
+                <!-- </div>
             </div>
         </li>
           <li><div><a href="{%url 'new_project'%}" id="forNav">submit Sermon</a></div></li>
@@ -171,8 +171,9 @@ nav ul li a{
                         
                         <div class="dropdown">
                             <a class="btn btn" data-toggle="dropdown" 
-                                aria-haspopup="true" aria-expanded="false" style="color: white;"  id="forNav">{{ user.username }} <img src='{{user.profile.profile_picture.url}}' width='18px' height='18px' style='border-radius:50%;'>
-                            </a>
+                                aria-haspopup="true" aria-expanded="false" style="color: white;"  id="forNav">{{ user.username }} -->
+                                 <!-- <img src='{{user.profile.profile_picture.url}}' width='18px' height='18px' style='border-radius:50%;'> -->
+                            <!-- </a>
                             <div class="dropdown-menu" style="width:300px; background-color:#474787;">
                                 <a class="dropdown-item" href="{%url 'my_profile'%}" id="forNav" style="color:white;">Profile</a>
                                 <div class="dropdown-divider"></div>
@@ -193,4 +194,254 @@ nav ul li a{
    
 </body>
 
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Hamburger Navbar</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    font-size: 72.5%;
+    font-family: 'Roboto', sans-serif;
+}
+#navbar{
+  font-family: 'Roboto', sans-serif;}
+        @media screen and (max-width:100%){
+        #search_form, #profile, .upload{
+     display: none;
+     
+        }
+    }
+
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.header{
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: #474787;
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 5rem;
+}
+
+.nav-link{
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #fff;
+}
+
+.nav-link:hover{
+  text-decoration: underline solid #fff 2px;
+  text-underline-offset:0.5em ;
+  transition: .5s;
+  background-color: none;
+}
+
+.nav-logo {
+    font-size: 2.1rem;
+    font-weight: 500;
+    color: #482ff7;
+}
+
+@media only screen and (max-width: 768px) {
+    .nav-menu {
+        position:fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+         z-index: 2000;
+        background-color: #474787;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        -webkit-transform: translateY(8px) rotate(45deg);
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        -webkit-transform: translateY(-8px) rotate(-45deg);
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+</style>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+          <a href="{% url 'index' %}">
+            <img src="https://i.postimg.cc/BnbcSwgQ/image-1.png" style=" width: 35%; ">
+          </a>
+            
+            <ul class="nav-menu">
+              <li><a class="nav-link"  href="{% url 'index' %}" id="forNav">Home</a></li>
+              <li><a href="{% url 'about' %}" class="nav-link" id="forNav">About</a></li>
+              <li><a href="{% url 'watch' %}" class="nav-link" id="forNav">Watch</a></li>
+              <li><a href="{% url 'give' %}"  class="nav-link" id="forNav">Give</a></li>
+              <li>
+              <div class="col-md-2" >
+                    <div class="row" id='profile'>
+                       
+                        <div class="col-md-8"> 
+                            
+                            <div class="dropdown">
+                              
+                                <a class="btn" data-toggle="dropdown" 
+                                aria-haspopup="true" aria-expanded="false"    id="forNav" style="font-size: 1.6rem;
+                                font-weight: 400;
+                                color: #fff;">Services 
+                                </a>
+                              
+                                <div class="dropdown-menu" style="width:200px; background-color:#474787;">
+                                    <a class="dropdown-item" href="{% url 'baptism' %}" style="font-size: 1.6rem;
+                                    font-weight: 400;
+                                    color: #fff;">Baptism</a>
+                                    <div class="dropdown-divider" id="forNav" class="nav-link"></div>
+                                    <a class="dropdown-item" href="{% url 'bookwedding' %}" id="forNav"  style="font-size: 1.6rem;
+                                    font-weight: 400;
+                                    color: #fff;">Weddings</a>
+                                </div> 
+                            </div>
+                        </div> 
+
+                      
+                       
+    
+              
+                    </div>
+                </div>
+            </li>
+            <li><div><a href="{%url 'new_project'%}" id="forNav" class="nav-link">submit Sermon</a></div></li>
+            <li>
+              <div class="col-md-2" >
+                  <div class="row" id='profile'>
+                      {% if user.is_authenticated %}
+                      <div class="col-md-8">
+                          
+                          <div class="dropdown">
+                              <a class="btn btn" data-toggle="dropdown" 
+                                  aria-haspopup="true" aria-expanded="false" style="font-size: 1.6rem;
+                                  font-weight: 400;
+                                  color: #fff;"  id="forNav">{{ user.username }} 
+                                  <!-- <img src='{{user.profile.profile_picture.url}}' width='18px' height='18px' style='border-radius:50%;'>  -->
+                              </a>
+                              <div class="dropdown-menu" style="width:300px; background-color:#474787;">
+                                  <a class="dropdown-item" href="{%url 'my_profile'%}" id="forNav" style="font-size: 1.6rem;
+                                  font-weight: 400;
+                                  color: #fff;">Profile</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item" href="/logout" id="forNav" style="font-size: 1.6rem;
+                                  font-weight: 400;
+                                  color: #fff;">Logout</a>
+                              </div>
+                          </div>
+                      </div>
+                      {% else %}
+  
+                      <a class='btn btn' href="/accounts/login/?next=/" style="color: white;">Login</a>
+  
+                      {% endif %}
+                  </div>
+              </div>
+          </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+</body>
+
+<script >
+    const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+const navLink = document.querySelectorAll(".nav-link");
+
+hamburger.addEventListener("click", mobileMenu);
+navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+}
+
+function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}
+</script>
 </html>
