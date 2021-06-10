@@ -229,29 +229,31 @@ def christiansR(request):
         add= request.POST['address']
         email= request.POST['email']
         dateRe=next_sunday_date
-        chris= Christians.objects.annotate(users=Count("email"))
-        print (chris)
+        chris= Christians.objects.all().order_by('dateRe').filter(dateRe=dateRe)
+        attendee=len(chris)
+        if attendee<=round(15*30/100,0):
 
-        if phoneNmber==phoneNmber:
+            christians=Christians.objects.create(firstname=firstname,lastname=lastname, phoneNmber=phoneNmber,add=add,email=email,dateRe=dateRe)
+            christians.save();
 
-            if User.objects.filter(email=email).exists():
-                 print('Email already used')
-            else:
-         
-              christians=Christians.objects.create(firstname=firstname,lastname=lastname, phoneNmber=phoneNmber,add=add,email=email,dateRe=dateRe)
-              christians.save();
-              d = str(next_sunday_date)
-              obj={
-                    'sender':'CALVARY',
-                    'phone':phoneNmber,
-                    'sms':'Dear '+firstname+', You will attend the service on '+d+' in the first service.'
-                    }
-              r=requests.post('https://send.isangegroup.com/',data=json.dumps(obj))
-              print('Successfully')
-              return redirect('/')
+
+            d = str(next_sunday_date)
+            obj={
+                'sender':'CALVARY',
+                'phone':phoneNmber,
+                'sms':'Dear '+firstname+', You will attend the service on '+d+' in the first service.'
+                }
+            r=requests.post('https://send.isangegroup.com/',data=json.dumps(obj))
+            print('Successfully')
+            return render(request,'christiansR.html',{'message': 'Successfull Registered'})
         else: 
-            print("the number belongs to another person") 
-            return redirect('/')
+            obj={
+                'sender':'CALVARY',
+                'phone':phoneNmber,
+                'sms':'Dear '+firstname+', The allowed people list is full. Please try next week'
+                }
+            r=requests.post('https://send.isangegroup.com/',data=json.dumps(obj))
+            return render(request,'christiansR.html',{'message': 'The allowed people list is full. Please try next week'})
 
 
     else:   
