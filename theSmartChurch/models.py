@@ -104,6 +104,7 @@ class Christians(models.Model):
     phoneNmber=models.CharField(max_length =30)
     add=models.CharField(max_length =30)
     email = models.EmailField()
+    dateRe = models.TextField()
 
     def __str__(self):
         return self.firstname

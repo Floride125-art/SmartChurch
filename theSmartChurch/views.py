@@ -16,7 +16,12 @@ from rest_framework.views import APIView
 from .serializer import ProfileSerializer,ProjectSerializer, AnnouncementsSerializer
 from django.shortcuts import render
 import six
+import datetime as DT
+import dateutil.relativedelta as REL
 from django.views.generic.base import TemplateView
+from django.db.models import Count
+import requests,json
+from datetime import datetime
 def index(request):
     projects = Project.objects.all().order_by('-date_posted')
     return render(request, 'index.html',{'projects':projects})
@@ -214,29 +219,45 @@ class ProjectList(APIView):
     
 def christiansR(request):
 
+    today = DT.date.today()
+    rd = REL.relativedelta(days=1, weekday=REL.SU)
+    next_sunday_date = today + rd
     if request.method == 'POST':
         firstname= request.POST['first']
         lastname= request.POST['second']
         phoneNmber= request.POST['phonenumber']
         add= request.POST['address']
         email= request.POST['email']
-      
+        dateRe=next_sunday_date
+        chris= Christians.objects.annotate(users=Count("email"))
+        print (chris)
+
         if phoneNmber==phoneNmber:
 
             if User.objects.filter(email=email).exists():
                  print('Email already used')
             else:
          
-              christians=Christians.objects.create(firstname=firstname,lastname=lastname, phoneNmber=phoneNmber,add=add,email=email)
+              christians=Christians.objects.create(firstname=firstname,lastname=lastname, phoneNmber=phoneNmber,add=add,email=email,dateRe=dateRe)
               christians.save();
+              d = str(next_sunday_date)
+              obj={
+                    'sender':'CALVARY',
+                    'phone':phoneNmber,
+                    'sms':'Dear '+firstname+', You will attend the service on '+d+' in the first service.'
+                    }
+              r=requests.post('https://send.isangegroup.com/',data=json.dumps(obj))
               print('Successfully')
+              return redirect('/')
         else: 
-         print("the number belongs to another person") 
-        return redirect('/')
+            print("the number belongs to another person") 
+            return redirect('/')
 
 
     else:   
-     return render(request,'christiansR.html')
+     return render(request,'christiansR.html',{'dateReg': next_sunday_date})
+
+     
 
 
         
