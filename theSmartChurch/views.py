@@ -250,10 +250,10 @@ def christiansR(request):
             obj={
                 'sender':'CALVARY',
                 'phone':phoneNmber,
-                'sms':'Dear '+firstname+', The allowed people list is full. Please try next week'
+                'sms':'Dear '+firstname+', This Sunday service is full no more space left . Please try next week'
                 }
             r=requests.post('https://send.isangegroup.com/',data=json.dumps(obj))
-            return render(request,'christiansR.html',{'message': 'The allowed people list is full. Please try next week'})
+            return render(request,'christiansR.html',{'message': 'This Sunday service is full no more space left. Please try next week'})
 
 
     else:   
